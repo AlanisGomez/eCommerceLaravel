@@ -1,0 +1,377 @@
+@media only screen and (min-device-width : 200px){
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+   background-image: url('../imgs/grey_wash_wall.png');
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    width: 100% !important;
+  }
+
+
+  nav.navbar{
+   background-color: rgba(0, 0, 0, 0.5)!important;
+   z-index: 3px!important;
+ }
+
+ div.imagen-banner {
+   display:block;
+   width: 100%;
+   height: 100vh;
+ }
+
+div.imagen-banner img.img-banner {
+     object-fit: cover;
+     width: 100%;
+}
+
+ div.video-banner  {
+display:none;
+ }
+
+ div.video-banner  iframe {
+  display:none;
+}
+
+  div.tituloBanner {
+  display: none;
+  }
+
+  div.tituloBanner div.redes-sociales{
+   display: none;
+  }
+
+
+  section.about, section.sucursales{
+    padding-left:5%;
+    padding-right:5%;
+   }
+
+
+  .titulo-division{
+     text-align: center;
+     text-transform: uppercase;
+     margin-bottom: 30px;
+     margin-top: 30px;
+    }
+
+    section.division {
+    background-color:rgba(0,0,0,0.8);
+    padding: 5px;
+    color:#fff;
+    margin-top: 80px;
+   }
+
+    .relative {
+      position: relative;
+    }
+
+    .collection-title {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: #0000004a;
+     margin-right: 15px;
+     z-index: 10;
+      }
+
+      .collection-title:hover {
+       background-color: #0000005a;
+      }
+
+      .collection-title h2 {
+        top: 40%;
+        display: -webkit-inline-box;
+        position: absolute;
+        width: 100%;
+        text-align: -webkit-center;
+        color: #fff;
+      }
+
+      .collection-title h5 {
+        top: 55%;
+        display: -webkit-inline-box;
+        position: absolute;
+        width: 100%;
+        text-align: -webkit-center;
+        color: #fff;
+      }
+
+  .producto{
+    margin-bottom: 10px;
+    }
+
+  section.about-us {
+      margin-top: 50px;
+    }
+
+  section.categorias {
+        margin-top:50px;
+        margin-bottom:50px;
+        padding: 0 5%;
+      }
+
+      .div-img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+   section.newsletter {
+    margin:50px;
+   }
+
+footer {
+  background-color: #000;
+  padding: 3% 5%;
+  color: #fff;
+  text-align: center;
+}
+
+article.info-contacto {
+  margin-top: 30px;
+}
+
+ div.redes-sociales-footer a {
+  text-decoration: none;
+}
+
+div.redes-sociales-footer i {
+  font-size: 40px;
+  margin-left:20px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+
+  .titulo-division{
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+   margin-top: 30px;
+   color:#fff;
+  }
+
+
+  .google-maps {
+        position: relative;
+        padding-bottom: 60%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+   .fondo-parrafo{
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    color:#fff;
+    padding: 6%;
+    }
+
+    .img-container img.logotipo-banner {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      display: block;
+    }
+
+   article.about-us-slide div.carousel div.carousel-inner div.carousel-item img{
+     border-radius: 3%;
+   }
+
+  .img-firstCarousel{
+      object-fit: cover;
+      display:block;
+      height:293px;
+      width:100%;
+  }
+
+  .img-banner {
+    object-fit: cover;
+    display:block;
+    float:left;
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  label {
+    color: #fff;
+  }
+
+  label, legend {
+    font-weight: bold;
+    display: block;
+    font-size: .9em;
+    margin-bottom: 0.4em;
+  }
+
+  .btnSubmit {
+    background-color: #00ffe5 !important;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: .97em;
+    letter-spacing: .03em;
+    -ms-touch-action: none;
+    touch-action: none;
+    cursor: pointer;
+    font-weight: bolder;
+    text-align: center;
+    color: currentColor;
+    text-decoration: none;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    border-radius: 0;
+    margin-top: 0;
+    margin-right: 1em;
+    text-shadow: none;
+    line-height: 2.4em;
+    min-height: 2.5em;
+    padding: 0 1.2em;
+    max-width: 100%;
+    transition: transform .3s, border .3s, background .3s, box-shadow .3s, opacity .3s, color .3s;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+  }
+
+  .btn-footer {
+    margin-top: 20px;
+    margin: 0 auto;
+  }
+
+  .input-text {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 0 .75em;
+    height: 2.507em;
+    font-size: .97em;
+    border-radius: 0;
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+    background-color: #fff;
+    color: #333;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: color .3s, border .3s, background .3s, opacity .3s;
+  }
+
+.carousel {
+  background-image: url('../imgs/grey_wash_wall.png');
+}
+
+.carousel-image {
+  display: block;
+  height: 300px;
+  /* set min-width, allow images to set cell width */
+  min-width: 150px;
+  max-width: 100%;
+  margin-right: 10px;
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel.is-fullscreen .carousel-image {
+  height: auto;
+  max-height: 100%;
+}
+ ol.flickity-page-dots {
+   display: none;
+ }
+
+}
+
+
+
+@media only screen and (min-device-width : 769px)  {
+
+  div.tituloBanner {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    top:250px;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: 'Abril Fatface', cursive;
+  }
+
+
+    div.tituloBanner h1{
+      font-size: 80px;
+    }
+
+    div.tituloBanner div.redes-sociales{
+      display:block;
+      width: 100%;
+      height: 50px;
+      margin-top: 210px;
+      background-color:#000;
+      z-index: 2;
+      text-align: right;
+      padding: 0px 55px;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    div.tituloBanner div.redes-sociales a {
+      text-decoration: none;
+
+    }
+
+    div.tituloBanner div.redes-sociales i {
+      font-size: 40px;
+      margin-left:20px;
+      color: #fff;
+    }
+
+    div.video-banner  {
+      display: block;
+     position: relative;
+     padding-bottom: 56.25%;
+     height: 0;
+     overflow: hidden;
+    }
+
+    div.video-banner  iframe {
+      display: block;
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    div.imagen-banner {
+      display:none;
+    }
+
+   div.imagen-banner img.img-banner {
+        display:none;
+   }
+
+    section.carrousel-productos {
+      margin-top: -50px;
+     }
+
+}
