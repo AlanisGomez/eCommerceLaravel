@@ -318,36 +318,10 @@ div.redes-sociales-footer i {
       font-size: 80px;
     }
 
-    div.tituloBanner div.redes-sociales{
-      display:block;
-      width: 100%;
-      height: 50px;
-      margin-top: 210px;
-      background-color:#000;
-      z-index: 2;
-      text-align: right;
-      padding: 0px 55px;
-      z-index: 1;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    div.tituloBanner div.redes-sociales a {
-      text-decoration: none;
-
-    }
-
-    div.tituloBanner div.redes-sociales i {
-      font-size: 40px;
-      margin-left:20px;
-      color: #fff;
-    }
-
     div.video-banner  {
-      display: block;
+    display: block;
      position: relative;
-     padding-bottom: 56.25%;
+     padding-bottom: 58.25%;
      height: 0;
      overflow: hidden;
     }

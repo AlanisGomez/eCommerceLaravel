@@ -15,9 +15,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos=Producto::paginate(12);
+        $productos=Producto::all();
 
-        return view('indexProductos', [
+        return view('home', [
           'productos' => $productos,
         ]);
     }
@@ -51,7 +51,10 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto= Producto::find($id);
+        return view('detalleProducto', [
+          'producto' => $producto,
+        ]);
     }
 
     /**

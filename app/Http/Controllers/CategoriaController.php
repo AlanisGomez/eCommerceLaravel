@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Producto;
+
 use App\Categoria;
 
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ class CategoriaController extends Controller
     {
       $categorias=Categoria::all();
 
-      return view('indexCategorias', [
+      return view('home', [
         'categorias' => $categorias,
       ]);
     }
@@ -51,7 +53,12 @@ class CategoriaController extends Controller
      */
     public function show($id)
     {
-        //
+        $productos= Producto::where('CategoriaId','=',$id)
+        ->paginate(12);
+        ->get();
+        return view('indexProductos', [
+          'productos' => $productos
+        ]);
     }
 
     /**

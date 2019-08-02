@@ -1,28 +1,35 @@
 @extends('layouts.plantilla')
 
+@section('title')
+  Home
+@endsection
+
 @section('content')
+<body>
 <section class="banner-video">
-<div class="tituloBanner">
-<h1>Splatter CO.</h1>
-  25% Sale
-<div class="redes-sociales">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-square"></i></a>
-    <a href="#"><i class="fab fa-twitter-square"></i></a>
-</div>
-</div>
-<div  class="video-banner">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9rij3ut7XbM?disablekb=1&wmode=transparent&widgetid=1&hd=1&start=6&end=50&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&loop=1&playlist=9rij3ut7XbM" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
-</div>
-<div class="imagen-banner">
-  <img src="imgs/eCommerce/banner/banner4.png" alt="" class="img-banner">
-</div>
+ <div class="tituloBanner">
+   <h1>Splatter CO.</h1>
+     <div class="redes-sociales">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+     </div>
+    </div>
+    <div class="video-banner">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/9rij3ut7XbM?disablekb=1&wmode=transparent&widgetid=1&hd=1&start=6&end=50&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&loop=1&playlist=9rij3ut7XbM" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
+    </div>
+      <div class="imagen-banner">
+        <img src="" alt="" class="img-banner">
+    </div>
 </section>
+
 <section class="carrousel-productos">
+
   <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
       <img class="carousel-image"
-        data-flickity-lazyload="/storage/{{}}" />
+        data-flickity-lazyload="" />
   </div>
+
 </section>
 
 <div class="container">
@@ -37,32 +44,34 @@
       </article>
     </div>
     <div class="col-12 col-md-6">
-<div class="img-container">
-  <img class="logotipo-banner" src="imgs/logotipo4.png" alt="logotipo">
-</div>
+    <div class="img-container">
+      <img class="logotipo-banner" src="{{ asset('logotipo.png') }}" alt="logotipo">
+    </div>
     </div>
   </div>
 </section>
 </div>
 
 <section class="categorias" id="categorias">
-<div class="row">
+ <div class="row">
   <div class="col-12 col-md-4">
+
     <article class="producto">
-      <a title="" href="{{route()}}">
+      <a href="">
         <div class="imagen-container relative">
         <div class="collection-title">
-          <h2>{{}}</h2>
+          <h2></h2>
           <h5>Ver más</h5>
         </div>
         <div class="div-img">
-        <img src="/storage/{{}}" alt=""  class="w-100"/>
+        <img src="" alt=""  class="w-100"/>
         </div>
       </div>
       </a>
     </article>
+
   </div>
-    </section>
+</section>
 
 <div class="container">
     <section class="sucursales fondo-parrafo">
@@ -105,29 +114,13 @@
   </div>
 </div>
 </section>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</body>
 @endsection
+
 @push('scripts')
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
-<script src="{{assets(js/fullscreen.js)}}"></script>
+<script src="{{asset('js/fullscreen')}}" defer></script>
+@endpush

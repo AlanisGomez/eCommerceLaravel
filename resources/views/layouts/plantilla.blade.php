@@ -36,8 +36,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
-
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
   <ul class="navbar-nav mr-auto">
@@ -45,8 +43,7 @@
       <a class="nav-link" href="{{ route('home') }}">Inicio<span class="sr-only">(current)</span></a>
     </li>
   <li class="nav-item dropdown">
-      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colecciones
-      </a>
+      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colecciones</a>
       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="{{ route('home') }}">Mujer</a>
       <a class="dropdown-item" href="{{ route('home') }}"> Hombre</a>
@@ -89,7 +86,7 @@
 </div>
   </nav>
 </header>
-<main class="py-4">
+<main class="">
     @yield('content')
 </main>
 
