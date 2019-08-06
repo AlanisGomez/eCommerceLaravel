@@ -50,18 +50,28 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'nombre' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'apellido' => ['required', 'string', 'max:255'],
-            'fec_nac' => ['required'],
+            'fec_nac' => ['required', 'date'],
             'doc_tipo' => ['required'],
-            'documento' =>  ['required', 'int'],
-            'domicilio' =>['required', 'string', 'max:255'],
+            'documento' =>  ['required', 'int', 'min:8', 'max:8'],
+            'domicilio' =>['required', 'string', 'min:10', 'max:255'],
             'telefono' =>['required', 'int'],
             'sexo' => ['required']
-        ]);
-    }
+         ],
+          [
+            "string"=> "El campo :attribute debe ser un texto",
+            "min"=>"El campo :attribute tiene un minimo de :min",
+            "max"=>"El campo :attribute tiene un minimo de :max",
+            "date"=> "El campo :attribute debe ser una fecha",
+            "numeric"=> "El campo :attribute debe ser un numero",
+            "integer"=> "El campo :attribute debe ser un numero entero",
+            "unique"=> "El campo :attribute se encuentra repetido",
+            "required"=>"El campo :attribute debe ser obligarorio",
+          ]);
 
+}
     /**
      * Create a new user instance after a valid registration.
      *
