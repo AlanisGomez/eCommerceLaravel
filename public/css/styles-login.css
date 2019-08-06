@@ -123,7 +123,7 @@ label, legend {
   vertical-align: middle;
   border-radius: 0;
   margin-top: 0;
-  text-shadow: none;
+  text-shadow: #929eaa 1px 1px 1px;
   line-height: 2.4em;
   min-height: 2.5em;
   padding: 0 1.2em;

@@ -15,6 +15,7 @@ class AddCategoryImgColumn extends Migration
     {
       Schema::table('categoria', function (Blueprint $table) {
       $table->string('imagen',190);
+      });
     }
 
     /**
@@ -26,5 +27,6 @@ class AddCategoryImgColumn extends Migration
     {
       Schema::table('categoria', function (Blueprint $table) {
       $table->dropColumn('imagen');
+      });
     }
 }

@@ -68,6 +68,12 @@
                 </li>
             @endif
         @else
+          <li class="nav-item">
+              <a href="{{ route('product.shoppingCart') }}" class="nav-link">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi Carrito
+                  <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+              </a>
+          </li>
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->nombre}} <span class="caret"></span>
@@ -89,7 +95,7 @@
 </div>
   </nav>
 </header>
-<main class="">
+<main class="mainContent">
     @yield('content')
 </main>
 

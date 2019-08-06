@@ -26,10 +26,10 @@
     @foreach ($productos as $producto)
       <div class="col-12 col-md-3 color-shape man">
         <a href="detalle/{{$producto->id}}">
-        <div class="card producto" style="width: 100%;">
+        <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
-              <img src="" class="imagen-producto" alt="...">
+              <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">
             </div>
           </div>
           <div class="card-body">
@@ -39,6 +39,12 @@
           </div>
         </div>
         </a>
+        <div class="addCartBtnCell">
+          <a href="{{ route('product.addToCart', ['id' => $producto->id]) }}" class="description addCartBtnTxt">Agregar al carrito
+            <i class="fa fa-shopping-cart" aria-hidden="true" style="padding-left: 10px;">
+            </i>
+          </a>
+          </div>
       </div>
     @endforeach
   </div>

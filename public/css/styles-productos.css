@@ -48,7 +48,7 @@ div.descripcion {
 }
 
 div.descripcion article.producto-descripcion {
-  color: #A0A0A0;
+  color: #A0A0A0 !important;
 }
 div.cupon {
   margin-top: 30px;
@@ -104,6 +104,7 @@ div.img-container {
   margin-top: 30px;
   background:rgba(0,0,0,0.4);
   color:#fff;
+  margin-bottom: 0px;
 }
     .imagen-producto{
       display:block;
@@ -136,8 +137,15 @@ div.img-container {
 
     }
 
+    .card-body p.description:hover,
+    .card-body h5.price:hover{
+      color:#fff !important;
+      text-decoration:none !important;
+    }
+
     .card-body p.description{
       text-align: center;
+      color: #fff !important;
     }
 
     .card-body h5.price{
@@ -221,4 +229,26 @@ div.img-container {
   .ui-group .button-group {
     display: inline-block;
     margin-right: 20px;
+  }
+
+  .addCartBtnCell{
+    height: 40px;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .addCartBtnTxt{
+    color: #fff !important;
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .addCartBtnCell:hover{
+    background-color: #00FFE5;
+  }
+
+  .addCartBtnTxt:hover{
+  text-shadow: #929eaa 1px 1px 1px;
   }

@@ -39,3 +39,40 @@ Route::get('/marcas', 'MarcaController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', [
+    'uses' => 'ProductoController@index',
+    'as' => 'product.index'
+]);
+
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'ProductoController@getAddToCart',
+    'as' => 'product.addToCart'
+]);
+
+Route::get('/reduce/{id}', [
+    'uses' => 'ProductoController@getReduceByOne',
+    'as' => 'product.reduceByOne'
+]);
+
+Route::get('/remove/{id}', [
+    'uses' => 'ProductoController@getRemoveItem',
+    'as' => 'product.remove'
+]);
+
+Route::get('/shopping-cart', [
+    'uses' => 'ProductoController@getCart',
+    'as' => 'product.shoppingCart'
+]);
+
+Route::get('/checkout', [
+    'uses' => 'ProductoController@getCheckout',
+    'as' => 'checkout',
+    'middleware' => 'auth'
+]);
+
+Route::post('/checkout', [
+    'uses' => 'ProductoController@postCheckout',
+    'as' => 'checkout',
+    'middleware' => 'auth'
+]);
