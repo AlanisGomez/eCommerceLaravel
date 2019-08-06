@@ -6,16 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
-    protected $guarded = [];
+    public $table = "producto";
+    public $guarded = [];
 
     public function categorias(){
-      return $this->belongsTo('App\Categoria', 'CategoriaId');
+      return $this->belongsTo('App\Categoria', 'categoria_id');
 
     public function marcas(){
-      return $this->belongsTo('App\Marca', 'MarcaId');
+      return $this->belongsTo('App\Marca', 'marca_id');
     }
 
     public function compras(){
-      return $this->belongsToMany('App\Compra', 'CompraDetalle','ProductoId', 'CompraId');
+      return $this->belongsToMany('App\Compra', 'compradetalle','producto_id', 'compra_id');
     }
 }
