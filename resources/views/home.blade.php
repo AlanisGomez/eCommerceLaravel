@@ -61,7 +61,7 @@
             <h5>Ver más</h5>
           </div>
           <div class="div-img">
-          <img src="images/eCommerce1.png" alt=""  class="w-100"/>
+          <img src="images/mujer/eCommerce1.png" alt=""  class="w-100"/>
           </div>
         </div>
         </a>
@@ -75,7 +75,7 @@
                   <h2>Hombre</h2>
                   <h5>Ver más</h5>
                 </div>
-                <img src="images/eCommerce4.png" alt=""  class="w-100 " /></a>
+                <img src="images/hombre/eCommerce4.png" alt=""  class="w-100 " /></a>
               </div>
             </article>
           </div>
@@ -87,7 +87,7 @@
                   <h2>Niños</h2>
                   <h5>Ver más</h5>
                 </div>
-                  <img src="images/eCommerce21.png" alt=""   class="w-100"/></a>
+                  <img src="images/ninios/eCommerce21.png" alt=""   class="w-100"/></a>
               </div>
             </article>
           </div>
