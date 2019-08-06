@@ -44,25 +44,25 @@
         <h5>Precio:</h5>
        </article>
        <p>
-         <input type="submit" value="Agregar al carrito" class="btnSubmit">
-       </p>
+         <input type="submit" value="Modificar" class="btnSubmit">
+         <form class="" action="/borrarProducto" method="post">
+          {{csrf_field()}}
+          <input type="hidden" name="id" value="">
+          <input type="submit" name="" value="Borrar Producto" class="btnSubmit">
+        </form>
+      </p>
+
     </div>
     <div class="col-12 col-md-4 cupon">
-      <img src="https://cdn.blogdechollos.com/600x0/blogdechollos/2015/06/Cdigo-descuento-del-10-en-Rakuten-cdigos-descuento-Rakuten-ofertas-Rakuten-rebajas-Rakuten-promociones-Rakuten.jpg" class="cupon" alt="">
+    <form class="" action="{{ route('login') }}" enctype="multipart/form-data"  method="post">
+      <p class="form-row form-row-wide"> <label for="cupon">{{__('Seleccionar archivo')}}<span class="required">*</span></label>
+      <input type="file" class="form-control-file" name="cupon" id="cupon"></p>
+    </form>
     </div>
   </div>
     <hr>
   </section>
   </div>
-  <section class="more-products">
-    <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
-      <img class="carousel-image" data-flickity-lazyload="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" />
-      <img class="carousel-image" data-flickity-lazyload="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" />
-      <img class="carousel-image" data-flickity-lazyload="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" />
-      <img class="carousel-image" data-flickity-lazyload="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" />
-    </div>
-  </section>
-
 
 @endsection
 @push('scripts')

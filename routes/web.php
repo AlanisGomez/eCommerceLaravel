@@ -11,11 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/detalle', function () {
+    return view('detalleProductoAdmin');
+});
+Route::get('/productos', function () {
+    return view('indexProductos');
 });
 
-Route::get('/productos', 'ProductoController@index');
+
+//Route::get('/productos', 'ProductoController@index');
 
 Route::get('/categorias', 'CategoriaController@index');
 

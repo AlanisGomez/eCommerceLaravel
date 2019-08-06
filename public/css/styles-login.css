@@ -7,8 +7,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body{
-  background-image: url("../imgs/green_dust_scratch.png");
+body.register, body.login{
+  background-image: url("../images/green_dust_scratch.png");
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   width: 100% !important;
@@ -178,9 +178,10 @@ label, legend {
 @media only screen and (min-device-width : 769px)  {
 
 body.login {
-  background-image: url("../imgs/eCommerce/banner/banner4.png");
+  background-image: url("../images/banner.png");
   background-repeat: no-repeat;
   background-position:center;
+  background-attachment: fixed;
   background-size: 100%;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;

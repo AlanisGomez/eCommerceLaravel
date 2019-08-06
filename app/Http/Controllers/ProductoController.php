@@ -29,7 +29,23 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+
+      $productoNuevo = new Actor();
+      $ruta = $request->file("foto")->store("public");
+      $nombreArchivo = basename($ruta);
+
+        $productoNuevo->foto = $nombreArchivo;
+        $productoNuevo =Producto::find($id),
+        $productoNuevo->nombre = $request["nombre"];
+        $productoNuevo->descripcion = $request["descripcion"];
+        $productoNuevo->precio = $request["precio"];
+        $productoNuevo->stock = $request["stock"];
+        $productoNuevo->marca_id = $request["marca_id"];
+        $productoNuevo->marca_id = $request["marca_id"];
+        $productoNuevo->categoria_id = $request["categoria_id"];
+
+        $productoNuevo->save();
+      return redirect("/indexProductos");
     }
 
     /**
@@ -77,7 +93,22 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $ruta = $request->file("foto")->store("public");
+      $nombreArchivo = basename($ruta);
+
+      $productoUpdate->foto = $nombreArchivo;
+      $productoUpdate =Producto::find($id),
+      $productoUpdate->nombre = $request["nombre"];
+      $productoUpdate->descripcion = $request["descripcion"];
+      $productoUpdate->precio = $request["precio"];
+      $productoUpdate->stock = $request["stock"];
+      $productoUpdate->marca_id = $request["marca_id"];
+      $productoUpdate->marca_id = $request["marca_id"];
+      $productoUpdate->categoria_id = $request["categoria_id"];
+
+      $productoUpdate->save();
+      return redirect("/detalleProducto");
     }
 
     /**
@@ -86,8 +117,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+      $id= $request['id'];
+      $producto= Producto::find($id);
+      $producto->delete();
+      return redirect('/indexProductos');
     }
 }

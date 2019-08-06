@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body>
+<body class="home">
 <section class="banner-video">
  <div class="tituloBanner">
    <h1>Splatter CO.</h1>
@@ -16,20 +16,17 @@
      </div>
     </div>
     <div class="video-banner">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/9rij3ut7XbM?disablekb=1&wmode=transparent&widgetid=1&hd=1&start=6&end=50&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&loop=1&playlist=9rij3ut7XbM" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/l6XlXK4zd3s?disablekb=1&wmode=transparent&widgetid=1&hd=1&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&loop=1" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
     </div>
       <div class="imagen-banner">
         <img src="" alt="" class="img-banner">
     </div>
 </section>
-
 <section class="carrousel-productos">
-
   <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
-      <img class="carousel-image"
-        data-flickity-lazyload="" />
-  </div>
 
+      <img class="carousel-image" data-flickity-lazyload="" />
+  </div>
 </section>
 
 <div class="container">
@@ -45,7 +42,7 @@
     </div>
     <div class="col-12 col-md-6">
     <div class="img-container">
-      <img class="logotipo-banner" src="{{ asset('logotipo.png') }}" alt="logotipo">
+      <img class="logotipo-banner" src="{{ asset('images/logotipo.png') }}" alt="logotipo">
     </div>
     </div>
   </div>
@@ -56,21 +53,25 @@
  <div class="row">
   <div class="col-12 col-md-4">
 
-    <article class="producto">
-      <a href="">
-        <div class="imagen-container relative">
-        <div class="collection-title">
-          <h2></h2>
-          <h5>Ver más</h5>
-        </div>
-        <div class="div-img">
-        <img src="" alt=""  class="w-100"/>
-        </div>
+  <article class="producto">
+    <a href="">
+      <div class="imagen-container relative">
+      <div class="collection-title">
+        <h2></h2>
+        <h5>Ver más</h5>
       </div>
-      </a>
-    </article>
+      <div class="div-img">
+      <img src="" alt=""  class="w-100"/>
+      </div>
+    </div>
+    </a>
+  </article>
 
   </div>
+</section>
+
+<section class="marcas">
+<h2 class="text-center">Marcas con las que trabajamos</h2>
 </section>
 
 <div class="container">
@@ -101,7 +102,7 @@
      <form action="home.php" method="post" accept-charset="utf-8" id="subscribe-blog">
        <p>¡Suscribite y obtené $300 para tu primera compra!
         Recibí nuestras promociones exclusivas y enterate de todas las novedades del mundo de la moda
-       </P>
+      </p>
        <p>Suscribite a nuestro newsletter</p>
        <p>
          <input class="input-text" type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Ingresá tu e-mail" value="" id="subscribe-field">
