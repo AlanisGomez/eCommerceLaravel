@@ -17,11 +17,18 @@ class ProductoController extends Controller
     {
         $productos=Producto::all();
 
-        return view('home', [
+        return view('indexProductos', [
           'productos' => $productos,
         ]);
     }
 
+    public function search(Request $request) {
+        $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->get();
+
+      return view("indexProductos", [
+            'productos' => $productos
+          ]);
+      }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,23 +36,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-
-      $productoNuevo = new Actor();
-      $ruta = $request->file("foto")->store("public");
-      $nombreArchivo = basename($ruta);
-
-        $productoNuevo->foto = $nombreArchivo;
-        $productoNuevo =Producto::find($id),
-        $productoNuevo->nombre = $request["nombre"];
-        $productoNuevo->descripcion = $request["descripcion"];
-        $productoNuevo->precio = $request["precio"];
-        $productoNuevo->stock = $request["stock"];
-        $productoNuevo->marca_id = $request["marca_id"];
-        $productoNuevo->marca_id = $request["marca_id"];
-        $productoNuevo->categoria_id = $request["categoria_id"];
-
-        $productoNuevo->save();
-      return redirect("/indexProductos");
+     return view('/createProducto');
     }
 
     /**
@@ -56,7 +47,34 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+            "nombre"=> "string|min:3",
+            "descripcion"=> "string",
+            "precio"=> "numeric|min:0|",
+            "foto" => "file"
+          ],
+          [
+            "string"=> "El campo :attribute debe ser un texto",
+            "numeric"=> "El campo :attribute debe ser un número",
+            "min"=> "El campo :attribute tiene un minimo de :min",
+            "file" => "Debe subir un archivo"
+          ]);
+
+      $productoNuevo = new Producto();
+
+      $ruta = $request->file("foto")->store("public");
+      $nombreArchivo = basename($ruta);
+
+      $productoNuevo->foto = $nombreArchivo;
+      $productoNuevo->nombre = $request["nombre"];
+      $productoNuevo->descripcion = $request["descripcion"];
+      $productoNuevo->precio = $request["precio"];
+      $productoNuevo->stock = $request["stock"];
+      $productoNuevo->marca_id = $request["marca_id"];
+      $productoNuevo->categoria_id = $request["categoria_id"];
+
+      $productoNuevo->save();
+      return redirect("/productos");
     }
 
     /**
@@ -68,7 +86,7 @@ class ProductoController extends Controller
     public function show($id)
     {
         $producto= Producto::find($id);
-        return view('detalleProducto', [
+        return view('detalleProductoAdmin', [
           'producto' => $producto,
         ]);
     }
@@ -81,7 +99,10 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productoUpdate =Producto::find($id);
+        return view('/updateProducto', [
+          'id' => $id,
+        ]);
     }
 
     /**
@@ -94,11 +115,26 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
 
+      $this->validate($request, [
+            "nombre"=> "string|min:3",
+            "descripcion"=> "string",
+            "precio"=> "numeric|min:0|",
+            "foto" => "file"
+          ],
+          [
+            "string"=> "El campo :attribute debe ser un texto",
+            "numeric"=> "El campo :attribute debe ser un número",
+            "min"=> "El campo :attribute tiene un minimo de :min",
+            "file" => "Debe subir un archivo"
+          ]);
+
+      $productoUpdate =Producto::find($id);
+
       $ruta = $request->file("foto")->store("public");
       $nombreArchivo = basename($ruta);
 
       $productoUpdate->foto = $nombreArchivo;
-      $productoUpdate =Producto::find($id),
+
       $productoUpdate->nombre = $request["nombre"];
       $productoUpdate->descripcion = $request["descripcion"];
       $productoUpdate->precio = $request["precio"];
@@ -108,7 +144,7 @@ class ProductoController extends Controller
       $productoUpdate->categoria_id = $request["categoria_id"];
 
       $productoUpdate->save();
-      return redirect("/detalleProducto");
+      return redirect("/productos");
     }
 
     /**
@@ -122,6 +158,6 @@ class ProductoController extends Controller
       $id= $request['id'];
       $producto= Producto::find($id);
       $producto->delete();
-      return redirect('/indexProductos');
+      return redirect('/productos');
     }
 }

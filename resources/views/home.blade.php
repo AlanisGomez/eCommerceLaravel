@@ -50,29 +50,48 @@
 </div>
 
 <section class="categorias" id="categorias">
- <div class="row">
-  <div class="col-12 col-md-4">
-
-  <article class="producto">
-    <a href="">
-      <div class="imagen-container relative">
-      <div class="collection-title">
-        <h2></h2>
-        <h5>Ver más</h5>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <article class="producto">
+        <a title="Mujer" href="{{ route('productos') }}">
+          <div class="imagen-container relative">
+          <div class="collection-title">
+            <h2>Mujer</h2>
+            <h5>Ver más</h5>
+          </div>
+          <div class="div-img">
+          <img src="images/eCommerce1.png" alt=""  class="w-100"/>
+          </div>
+        </div>
+        </a>
+      </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="producto">
+                <a title="Hombre" href="{{ route('productos') }}">
+              <div class="imagen-container relative">
+                <div class="collection-title">
+                  <h2>Hombre</h2>
+                  <h5>Ver más</h5>
+                </div>
+                <img src="images/eCommerce4.png" alt=""  class="w-100 " /></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-4">
+            <article class="producto">
+              <a title="Niños" href="{{ route('productos') }}">
+              <div class="imagen-container relative">
+                <div class="collection-title">
+                  <h2>Niños</h2>
+                  <h5>Ver más</h5>
+                </div>
+                  <img src="images/eCommerce21.png" alt=""   class="w-100"/></a>
+              </div>
+            </article>
+          </div>
       </div>
-      <div class="div-img">
-      <img src="" alt=""  class="w-100"/>
-      </div>
-    </div>
-    </a>
-  </article>
-
-  </div>
-</section>
-
-<section class="marcas">
-<h2 class="text-center">Marcas con las que trabajamos</h2>
-</section>
+  </section>
 
 <div class="container">
     <section class="sucursales fondo-parrafo">
@@ -93,6 +112,11 @@
       </div>
       </section>
       </div>
+
+      <section class="marcas">
+      <h2 class="text-center">Marcas con las que trabajamos</h2>
+      </section>
+
 
       <!-- Es lo que copie de la pagina>-->
     <section class="newsletter">

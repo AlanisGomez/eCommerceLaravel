@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body.producto-detalle{
+body.productos{
 background-image: url('../images/fashion-2309519_1920.jpg');
 background-repeat: no-repeat;
 background-position:center;
@@ -17,6 +17,12 @@ font-family: 'Montserrat', sans-serif;
 width: 100% !important;
 }
 
+body.producto-detalle{
+background-image: url('../images/grey_wash_wall.png');
+box-sizing: border-box;
+font-family: 'Montserrat', sans-serif;
+width: 100% !important;
+}
 
 nav.navbar{
  background-color: rgba(0, 0, 0, 0.5)!important;
@@ -28,13 +34,12 @@ section.more-products{
 
 section.producto-detalle {
   margin-top:60px;
+    margin-bottom:80px;
 }
 
 section.producto-detalle h2{
-margin-left:48px;
+margin-left:45px;
 margin-bottom: 20px;
-padding-top: 20px;
-color: #A0A0A0;
 }
 
 div.descripcion {
@@ -45,7 +50,10 @@ div.descripcion {
 div.descripcion article.producto-descripcion {
   color: #A0A0A0;
 }
-
+div.cupon {
+  margin-top: 30px;
+  height: 300px;
+}
 img.cupon{
   display: block;
   width: 100%;
@@ -94,7 +102,8 @@ div.img-container {
   margin-right: auto;
   border:0px;
   margin-top: 30px;
-  background:rgba(255,255,255, 0.5);
+  background:rgba(0,0,0,0.4);
+  color:#fff;
 }
     .imagen-producto{
       display:block;

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body class="producto-detalle">
+<body class="productos">
 
 <div class="container">
 <section class="producto-detalle">
@@ -23,92 +23,31 @@
 
   <div class="grid">
   <div class="row">
-    <div class="col-12 col-md-3 color-shape man">
-      <a href="">
-      <div class="card producto" style="width: 100%;">
-        <div class="container">
-          <div class="img-container" >
-            <img src="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" class="imagen-producto" alt="...">
+    @foreach ($productos as $producto)
+      <div class="col-12 col-md-3 color-shape man">
+        <a href="detalle/{{$producto->id}}">
+        <div class="card producto" style="width: 100%;">
+          <div class="container">
+            <div class="img-container" >
+              <img src="" class="imagen-producto" alt="...">
+            </div>
+          </div>
+          <div class="card-body">
+          <p class="description">{{$producto->nombre}}</p>
+          <hr>
+          <h5 class="price">${{$producto->precio}}</h5>
           </div>
         </div>
-        <div class="card-body">
-        <p class="description">Algo</p>
-        <hr>
-        <h5 class="price">1234</h5>
-        </div>
+        </a>
       </div>
-      </a>
-    </div>
-
-    <div class="col-12 col-md-3 color-shape child">
-      <a href="">
-      <div class="card producto" style="width: 100%;">
-        <div class="container">
-          <div class="img-container" >
-            <img src="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" class="imagen-producto" alt="...">
-          </div>
-        </div>
-        <div class="card-body">
-        <p class="description">Algo</p>
-        <hr>
-        <h5 class="price">1234</h5>
-        </div>
-      </div>
-      </a>
-    </div>
-
-    <div class="col-12 col-md-3 color-shape woman">
-      <a href="">
-      <div class="card producto" style="width: 100%;">
-        <div class="container">
-          <div class="img-container" >
-            <img src="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" class="imagen-producto" alt="...">
-          </div>
-        </div>
-        <div class="card-body">
-        <p class="description">Algo</p>
-        <hr>
-        <h5 class="price">1234</h5>
-        </div>
-      </div>
-      </a>
-    </div>
-
-    <div class="col-12 col-md-3 color-shape man">
-      <a href="">
-      <div class="card producto" style="width: 100%;">
-        <div class="container">
-          <div class="img-container" >
-            <img src="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" class="imagen-producto" alt="...">
-          </div>
-        </div>
-        <div class="card-body">
-        <p class="description">Algo</p>
-        <hr>
-        <h5 class="price">1234</h5>
-        </div>
-      </div>
-      </a>
-    </div>
-
-    <div class="col-12 col-md-3  color-shape woman">
-      <a href="">
-      <div class="card producto" style="width: 100%;">
-        <div class="container">
-          <div class="img-container" >
-            <img src="https://www.interactius.com/wp-content/uploads/2017/09/foto3.png" class="imagen-producto" alt="...">
-          </div>
-        </div>
-        <div class="card-body">
-        <p class="description">Algo</p>
-        <hr>
-        <h5 class="price">1234</h5>
-        </div>
-      </div>
-      </a>
-    </div>
+    @endforeach
   </div>
-  </div>
+</div>
+<a href="/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
+<form class="" action="{{ url('/productos/buscar') }}" method="get">
+   <label for="q">Busca un producto</label>
+   <input type="text" name="q" value="">
+</form>
 </section>
 </div>
 
