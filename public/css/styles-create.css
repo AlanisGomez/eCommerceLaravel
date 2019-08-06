@@ -1,0 +1,23 @@
+@media only screen and (min-device-width : 200px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+body.create{
+  background-image:url('../images/grey_wash_wall.png');
+}
+  section.create {
+    margin-top: 60px;
+    margin-bottom:80px;
+    color:#fff;
+  }
+
+  section.create label{
+    color:#fff;
+  }
+
+}

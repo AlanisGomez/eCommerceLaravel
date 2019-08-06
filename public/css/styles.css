@@ -72,6 +72,7 @@ display:none;
      background-color:black;
      height: 500px;
      margin-bottom: 50px;
+     margin-top: 50px;
      padding: 3%;
    }
 
@@ -124,9 +125,10 @@ display:none;
     }
 
   section.categorias {
+        background-color: black;
         margin-top:50px;
         margin-bottom:50px;
-        padding: 0 5%;
+        padding:2%;
       }
 
       .div-img{

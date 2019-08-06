@@ -11,15 +11,22 @@
 |
 */
 
-Route::get('/detalle', function () {
-    return view('detalleProductoAdmin');
-});
-Route::get('/productos', function () {
-    return view('indexProductos');
-});
 
+Route::get('/detalle/{id}',  'ProductoController@show');
 
-//Route::get('/productos', 'ProductoController@index');
+Route::get('/productos','ProductoController@index')->name('productos');
+
+Route::get('/productos/buscar' , 'ProductoController@search');
+
+Route::get('/create', 'ProductoController@create');
+
+Route::get('/update/{id}', 'ProductoController@edit');
+
+Route::post('/update/{id}','ProductoController@update');
+
+Route::post('/create','ProductoController@store');
+
+Route::post('/borrarProducto', 'ProductoController@destroy');
 
 Route::get('/categorias', 'CategoriaController@index');
 

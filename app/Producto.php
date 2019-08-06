@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
-    public $table = "producto";
-    public $guarded = [];
+    protected $table = "producto";
+    protected $guarded = [];
 
     public function categorias(){
       return $this->belongsTo('App\Categoria', 'categoria_id');
+    }
 
     public function marcas(){
       return $this->belongsTo('App\Marca', 'marca_id');
