@@ -42,17 +42,27 @@
     <!-- FOMULARIO FECHA DE NACIMIENTO -->
     <p class="form-row form-row-wide">
     <label for="fec_nac">{{ __('Fecha de Nacimiento') }}<span class="required">*</span></label>
-    <input type="date" name="fec_nac" min="1980-01-01" max="2000-01-01" >
+    <input type="date" name="fec_nac" min="1980-01-01" max="2000-01-01" class=" form-control @error('fec_nac') is-invalid @enderror" >
+      @error('fec_nac')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+      @enderror
     </p>
 
     <!-- FOMULARIO TIPO DE DOCUMENTO -->
     <p class="form-row form-row-wide">
     <label for="doc_tipo">{{ __('Tipo de Documento') }}<span class="required">*</span></label>
-    <select class="form-control"  name="doc_tipo" id="doc_tipo">
+    <select class="form-control @error('doc_tipo') is-invalid @enderror"  name="doc_tipo" id="doc_tipo">
     <option value="dni" selected>DNI</option>
     <option value="lde">Libreta de enrolamiento</option>
     <option value="lbc">Libreta cívica</option>
     </select>
+    @error('doc_tipo')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
     </p>
 
     <!-- FOMULARIO DNI-->

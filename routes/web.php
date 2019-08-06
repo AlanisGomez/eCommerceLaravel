@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::get('/detalle/{id}',  'ProductoController@show');
 
 Route::get('/productos','ProductoController@index')->name('productos');
