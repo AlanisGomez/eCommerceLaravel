@@ -16,7 +16,7 @@
      </div>
     </div>
     <div class="video-banner">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/l6XlXK4zd3s?disablekb=1&wmode=transparent&widgetid=1&hd=1&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&loop=1" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/l6XlXK4zd3s?loop=1&rel=0&disablekb=1&wmode=transparent&widgetid=1&hd=1&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&playlist=l6XlXK4zd3s" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
     </div>
       <div class="imagen-banner">
         <img src="" alt="" class="img-banner">
@@ -24,8 +24,9 @@
 </section>
 <section class="carrousel-productos">
   <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
-
-      <img class="carousel-image" data-flickity-lazyload="" />
+    @foreach ($productos as $producto)
+    <img class="carousel-image" data-flickity-lazyload="/storage/{{$producto->foto}}" />
+    @endforeach
   </div>
 </section>
 
