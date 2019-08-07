@@ -1,0 +1,13 @@
+.contentCart{
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.justifyCenter{
+  justify-content: center;
+}
+
+.list-group-item{
+  display: inherit;
+
+}
