@@ -26,6 +26,7 @@
   <link href="{{ asset('css/styles-productos.css') }}" rel="stylesheet">
   <link href="{{ asset('css/styles-login.css') }}" rel="stylesheet">
   <link href="{{ asset('css/styles-create.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/styles-cart.css') }}" rel="stylesheet">
 
 
   <title>@yield("title")</title>
