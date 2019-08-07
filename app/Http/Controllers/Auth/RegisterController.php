@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'fec_nac' => ['required', 'date'],
             'doc_tipo' => ['required'],
-            'documento' =>  ['required', 'int', 'min:8', 'max:8'],
+            'documento' =>  ['required', 'int', 'min:8'],
             'domicilio' =>['required', 'string', 'min:10', 'max:255'],
             'telefono' =>['required', 'int'],
             'sexo' => ['required']

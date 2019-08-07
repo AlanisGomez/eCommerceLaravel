@@ -11,25 +11,24 @@ class seederCategoria extends Seeder
      */
     public function run()
     {
-        DB::table("categoria")->insert([
 
-          [
-            "nombre"=>"Mujer",
-            "descripcion"=>"Ropa de Mujer",
-            "imagen"=>"images/eCommerce1.png"
-          ],
-          [
-            "nombre"=>"Homber",
-            "descripcion"=>"Ropa de Hombre",
-            "imagen"=>"images/eCommerce4.png"
-          ],
-          [
-            "nombre"=>"Niños",
-            "descripcion"=>"Ropa de Niños",
-            "imagen"=>"images/eCommerce21.png"
-          ]
-          
-        ]
+        DB::table("categoria")->insert([
+                  [
+                    "nombre"=>"Mujer",
+                    "descripcion"=>"Ropa de Mujer",
+                    "imagen"=>"images/mujer/eCommerce1.png"
+                  ],
+                  [
+                    "nombre"=>"Homber",
+                    "descripcion"=>"Ropa de Hombre",
+                    "imagen"=>"images/hombre/eCommerce4.png"
+                  ],
+                  [
+                    "nombre"=>"Niños",
+                    "descripcion"=>"Ropa de Niños",
+                    "imagen"=>"images/ninios/eCommerce21.png"
+                  ]
+                ]
         );
 
     }

@@ -25,7 +25,7 @@
 <section class="carrousel-productos">
   <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
     @foreach ($productos as $producto)
-    <img class="carousel-image" data-flickity-lazyload="/storage/{{$producto->foto}}" />
+    <img class="carousel-image" data-flickity-lazyload="{{$producto->imagen}}" />
     @endforeach
   </div>
 </section>
