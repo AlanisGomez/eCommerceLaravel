@@ -17,11 +17,11 @@ class RolMiddleware
     {
 
       if(auth()->user()->rol === 'admin'){
-        return redirect('/admin');
+        //return redirect('/admin/indexProductos');
       }
 
       if(auth()->user()->rol === 'customer'){
-        return redirect('/customer');
+        //return redirect('/customer');
       }
 
         return $next($request);

@@ -15,6 +15,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
 'middleware' =>['auth', 'rol:admin']
 ], function(){
 
+Route::get('/admin', 'ProductosController@welcomeAdmin');
+
 Route::get('/productos', 'ProductosController@index');
 
 Route::get('/productos','ProductosController@index')->name('productos');
@@ -40,47 +42,47 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 'middleware' => ['auth', 'rol:customer']
 ], function(){
 
-Route::get('/productos', 'ProductosController@index');
+  Route::get('/productos', 'ProductosControllerUser@index');
 
-Route::get('/productos','ProductosController@index')->name('productos');
+  Route::get('/productos','ProductosControllerUser@index')->name('productos');
 
-Route::get('/detalle/{id}',  'ProductosController@show');
+  Route::get('/detalle/{id}',  'ProductosControllerUser@show');
 
-Route::get('/productos/buscar' , 'ProductosController@search');
+  Route::get('/productos/buscar' , 'ProductosControllerUser@search');
 
-Route::get('/', [
-    'uses' => 'ProductosController@index',
-    'as' => 'product.index'
+  Route::get('/', [
+      'uses' => 'ProductosControllerUser@index',
+      'as' => 'product.index'
 ]);
 
 Route::get('/add-to-cart/{id}', [
-    'uses' => 'ProductosController@getAddToCart',
+    'uses' => 'ProductosControllerUser@getAddToCart',
     'as' => 'product.addToCart'
 ]);
 
 Route::get('/reduce/{id}', [
-    'uses' => 'ProductosController@getReduceByOne',
+    'uses' => 'ProductosControllerUser@getReduceByOne',
     'as' => 'product.reduceByOne'
 ]);
 
 Route::get('/remove/{id}', [
-    'uses' => 'ProductosController@getRemoveItem',
+    'uses' => 'ProductoController@getRemoveItem',
     'as' => 'product.remove'
 ]);
 
 Route::get('/shopping-cart', [
-    'uses' => 'ProductosController@getCart',
+    'uses' => 'ProductosControllerUser@getCart',
     'as' => 'product.shoppingCart'
 ]);
 
 Route::get('/checkout', [
-    'uses' => 'ProductosController@getCheckout',
+    'uses' => 'ProductoController@getCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
 
 Route::post('/checkout', [
-    'uses' => 'ProductosController@postCheckout',
+    'uses' => 'ProductoController@postCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
@@ -95,7 +97,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/categorias', 'CategoriaController@index');
 
-Route::get('/usuarios', 'UsuarioController@index');
+//Route::get('/usuarios', 'UsuarioController@index');
 
 Route::get('/compras', 'CompraController@index');
 

@@ -12,7 +12,7 @@ use Session;
 use Auth;
 
 
-class ProductosController extends Controller
+class ProductosControllerUser extends Controller
 {
   public function index()
   {

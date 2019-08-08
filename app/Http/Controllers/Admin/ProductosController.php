@@ -161,6 +161,12 @@ class ProductosController extends Controller
     $producto->delete();
     return redirect('admin\productos');
   }
+
+  public function welcomeAdmin(){
+    return redirect('welcome');
+  }
+
+
 ////////////////////////////////////////////CART FUNCTIONS
   public function getAddToCart(Request $request, $id)
   {
