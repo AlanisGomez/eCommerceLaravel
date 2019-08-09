@@ -16,9 +16,9 @@ class ProductosController extends Controller
 {
   public function index()
   {
-      $productos=Producto::all();
+      $productos=Producto::paginate(12);
 
-      return view('admin\indexProductos', [
+      return view('admin/indexProductos', [
         'productos' => $productos,
       ]);
   }
@@ -26,7 +26,7 @@ class ProductosController extends Controller
   public function search(Request $request) {
       $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->get();
 
-    return view("admin\indexProductos", [
+    return view("admin/productos", [
           'productos' => $productos
         ]);
     }
@@ -37,7 +37,7 @@ class ProductosController extends Controller
    */
   public function create()
   {
-   return view('admin\createProducto');
+   return view('admin/createProducto');
   }
 
   /**
@@ -63,10 +63,10 @@ class ProductosController extends Controller
 
     $productoNuevo = new Producto();
 
-    $ruta = $request->file("foto")->store("public");
+    $ruta = $request->file("imagen")->store("public");
     $nombreArchivo = basename($ruta);
 
-    $productoNuevo->foto = $nombreArchivo;
+    $productoNuevo->imagen = $nombreArchivo;
     $productoNuevo->nombre = $request["nombre"];
     $productoNuevo->descripcion = $request["descripcion"];
     $productoNuevo->precio = $request["precio"];
@@ -75,7 +75,7 @@ class ProductosController extends Controller
     $productoNuevo->categoria_id = $request["categoria_id"];
 
     $productoNuevo->save();
-    return redirect("admin\productos");
+    return redirect("admin/productos");
   }
 
   /**
@@ -87,7 +87,7 @@ class ProductosController extends Controller
   public function show($id)
   {
       $producto= Producto::find($id);
-      return view('admin\detalleProducto', [
+      return view('admin/detalleProducto', [
         'producto' => $producto,
       ]);
   }
@@ -100,9 +100,10 @@ class ProductosController extends Controller
    */
   public function edit($id)
   {
-      $productoUpdate =Producto::find($id);
-      return view('admin\updateProducto', [
-        'id' => $id,
+      $producto= Producto::find($id);
+      return view('admin/updateProducto', [
+        'producto' => $producto,
+        'id'=> $id,
       ]);
   }
 
@@ -131,10 +132,10 @@ class ProductosController extends Controller
 
     $productoUpdate =Producto::find($id);
 
-    $ruta = $request->file("foto")->store("public");
+    $ruta = $request->file("imagen")->store("public");
     $nombreArchivo = basename($ruta);
 
-    $productoUpdate->foto = $nombreArchivo;
+    $productoUpdate->imagen = $nombreArchivo;
 
     $productoUpdate->nombre = $request["nombre"];
     $productoUpdate->descripcion = $request["descripcion"];
@@ -145,7 +146,7 @@ class ProductosController extends Controller
     $productoUpdate->categoria_id = $request["categoria_id"];
 
     $productoUpdate->save();
-    return redirect("admin\productos");
+    return redirect("admin/productos");
   }
 
   /**
@@ -159,7 +160,7 @@ class ProductosController extends Controller
     $id= $request['id'];
     $producto= Producto::find($id);
     $producto->delete();
-    return redirect('admin\productos');
+    return redirect('admin/productos');
   }
 
   public function welcomeAdmin(){

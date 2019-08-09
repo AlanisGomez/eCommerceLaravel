@@ -6,7 +6,6 @@
 
 @section('content')
 <body class="productos">
-
 <div class="container">
 <section class="producto-detalle">
 
@@ -20,12 +19,27 @@
       </div>
     </div>
     </div>
+    <form class="card card-sm" action="{{ url('customer/productos/buscar') }}" method="get">
+         <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                   <i class="fas fa-search h4 text-body"></i>
+                </div>
+                                   <!--end of col-->
+                   <div class="col">
+                 <input class="form-control form-control-lg form-control-borderless"name="q"  type="search" placeholder="Search topics or keywords">
+                   </div>
+                                   <!--end of col-->
+             <div class="col-auto">
+             <button class="btn btn-lg btn-success" type="submit">Search</button>
+             </div>         <!--end of col-->
+               </div>
+    </form>
 
   <div class="grid">
   <div class="row">
     @foreach ($productos as $producto)
       <div class="col-12 col-md-3 color-shape man">
-        <a href="detalle/{{$producto->id}}">
+        <a href="/customer/detalle/{{$producto->id}}">
         <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
@@ -49,13 +63,9 @@
     @endforeach
   </div>
 </div>
-<form class="" action="{{ url('/productos/buscar') }}" method="get">
-   <label for="q">Busca un producto</label>
-   <input type="text" name="q" value="">
-</form>
 </section>
 </div>
-
+{{$productos->links()}}
 </body>
 @endsection
 

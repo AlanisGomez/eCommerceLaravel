@@ -13,8 +13,5 @@ class Compra extends Model
     public function Usuarios(){
       return $this->belongsTo('App\User', 'usuario_id');
     }
-
-    public function productos(){
-      return $this->belongsToMany('App\Producto', 'compradetalle','compra_id','producto_id',);
-    }
+  
 }

@@ -26,9 +26,31 @@
     padding-top: 50px;
   }
   nav.navbar{
-   background-color: rgba(0, 0, 0, 0.5)!important;
-   z-index: 3px!important;
+    background-color: rgba(0, 0, 0, 0.5)!important;
+    display: inline-flex;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    transition: all ease .5s;
+
  }
+
+ .navbar.solid {
+  background-color:#00ffe5 !important;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 2px #212121;
+
+    a.navbar-brand {
+      color: #212121;
+      transition: color 1s ease 0s;
+    }
+
+}
+
+  .nav-link.linkSolid {
+    color: #212121 !important;
+    transition: color 1s ease 0s;
+  }
 
  div.imagen-banner {
    display:block;

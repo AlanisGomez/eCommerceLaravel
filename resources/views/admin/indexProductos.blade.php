@@ -49,13 +49,14 @@
     @endforeach
   </div>
 </div>
-<a href="/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
+<a href="/admin/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
 <form class="" action="{{ url('/productos/buscar') }}" method="get">
    <label for="q">Busca un producto</label>
    <input type="text" name="q" value="">
 </form>
 </section>
 </div>
+{{$productos->links()}}
 
 </body>
 @endsection

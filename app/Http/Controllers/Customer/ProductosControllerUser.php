@@ -18,17 +18,17 @@ class ProductosControllerUser extends Controller
 {
   public function index()
   {
-      $productos=Producto::all();
+      $productos=Producto::paginate(12);
 
-      return view('customer\indexProductos', [
+      return view('/indexProductos', [
         'productos' => $productos,
       ]);
   }
 
   public function search(Request $request) {
-      $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->get();
+      $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->paginate(12);
 
-    return view("indexProductos", [
+    return view("/indexProductos", [
           'productos' => $productos
         ]);
     }
@@ -40,10 +40,11 @@ class ProductosControllerUser extends Controller
 
 
   public function show($id)
-  {
+  {   $productos=Producto::all();
       $producto= Producto::find($id);
-      return view('customer\detalleProducto', [
+      return view('customer/detalleProducto', [
         'producto' => $producto,
+        'productos' => $productos,
       ]);
   }
 
