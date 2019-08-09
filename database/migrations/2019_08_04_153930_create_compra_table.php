@@ -16,7 +16,7 @@ class CreateCompraTable extends Migration
         Schema::create('compra', function (Blueprint $table) {
             $table->Increments('id');
             $table->date('fec_compra');
-            $table->integer('num_factura');
+            $table->Increments('num_factura');
             $table->double('total');
             $table->char('medio_pago',3);
             $table->char('tipo_comprobante',3);

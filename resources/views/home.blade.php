@@ -122,7 +122,7 @@
 
 
       <!-- Es lo que copie de la pagina>-->
-    <section class="newsletter">
+    <section class="newsletter pb-5">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8">
     <div class="fondo-parrafo">

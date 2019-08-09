@@ -7,12 +7,12 @@
 @section('content')
     @if(Session::has('cart'))
     <div class="px-4 px-lg-0">
-      <!-- For demo purpose -->
+      <!-- CABECERA -->
       <div class="container pt-5 text-center">
         <h1 class="display-4">Mi carrito de compras</h1>
         <p class="lead mb-0">¡No te quedes con las ganas!</p>
       </div>
-      <!-- End -->
+      <!-- FIN -->
 
       <div class="pb-5 pt-5 mt-5 bodybkg">
         <div class="container">
@@ -101,7 +101,7 @@
 
     @else
       <div class="px-4 px-lg-0">
-        <!-- For demo purpose -->
+        <!-- CABECERA -->
         <div class="container pt-5 text-center">
           <h1 class="display-4">Tu carrito está vacío</h1>
           <p class="lead mb-0">¡Todos nuestros productos te esperan!</p>

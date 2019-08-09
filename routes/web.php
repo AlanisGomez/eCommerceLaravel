@@ -15,16 +15,27 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-  Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
+Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
 Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 'middleware' =>['auth', 'customer']], function(){
 
-    Route::get('/categorias', 'CategoriaControllerUser@index');
+  Route::get('/checkout', [
+      'uses' => 'ProductosControllerUser@getCheckout',
+      'as' => 'checkout',
+      'middleware' => 'auth'
+  ]);
 
-    Route::get('/compras', 'CompraControllerUser@index');
+  Route::post('/checkout', [
+      'uses' => 'ProductosControllerUser@postCheckout',
+      'as' => 'checkout',
+      'middleware' => 'auth'
+  ]);
+  Route::get('/compras', 'ComprasController@index');
 
-    Route::get('/marcas', 'MarcaControllerUser@index');
+  Route::get('/compras', 'ComprasController@index')->name('compras');
+
+  Route::get('/compras/{id}', 'ComprasController@show')->name('showCompra');
 
     Route::get('/detalle/{id}',  'ProductosControllerUser@show');
 
@@ -46,7 +57,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
     ]);
 
     Route::get('/remove/{id}', [
-        'uses' => 'ProductoControllerUser@getRemoveItem',
+        'uses' => 'ProductosControllerUser@getRemoveItem',
         'as' => 'product.remove'
     ]);
 
@@ -56,13 +67,13 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
     ]);
 
     Route::get('/checkout', [
-        'uses' => 'ProductoControllerUser@getCheckout',
+        'uses' => 'ProductosControllerUser@getCheckout',
         'as' => 'checkout',
         'middleware' => 'auth'
     ]);
 
     Route::post('/checkout', [
-        'uses' => 'ProductoControllerUser@postCheckout',
+        'uses' => 'ProductosControllerUser@postCheckout',
         'as' => 'checkout',
         'middleware' => 'auth'
     ]);
@@ -84,10 +95,6 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
         Route::post('/create','ProductosController@store')->name('create');
 
         Route::get('update/{id}', 'ProductosController@edit');
-
-        Route::post('/update/{id}','ProductosController@update')->name('update');
-
-        Route::post('/borrarProducto', 'ProductosController@destroy')->name('borrar');
 
         Route::get('/usuarios', 'UsuarioController@index');
     });

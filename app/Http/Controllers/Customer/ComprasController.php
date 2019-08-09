@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Compra;
+use App\Producto;
+use Auth;
 
 class ComprasController extends Controller
 {
@@ -14,7 +17,12 @@ class ComprasController extends Controller
      */
     public function index()
     {
-        //
+      $id = Auth::user()->id;
+      $compras=Compra::all();    //::where('usuario_id', '=',$id)->get();
+
+      return view('customer\indexCompras', [
+        'compras' => $compras,
+      ]);
     }
 
     /**
@@ -46,7 +54,10 @@ class ComprasController extends Controller
      */
     public function show($id)
     {
-        //
+      $productos= Producto::where('compra_id','=',$id)->paginate(12)->get();
+      return view('indexProductos', [
+        'productos' => $productos
+      ]);
     }
 
     /**
