@@ -76,16 +76,20 @@ Route::get('/shopping-cart', [
 ]);
 
 Route::get('/checkout', [
-    'uses' => 'ProductoController@getCheckout',
+    'uses' => 'ProductosControllerUser@getCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
 
 Route::post('/checkout', [
-    'uses' => 'ProductoController@postCheckout',
+    'uses' => 'ProductosControllerUser@postCheckout',
     'as' => 'checkout',
     'middleware' => 'auth'
 ]);
+
+Route::get('/compras', 'ComprasController@index')->name('compras');
+
+Route::get('/compras/{id}', 'ComprasController@show')->name('showCompra');
 
 });
 
@@ -97,8 +101,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/categorias', 'CategoriaController@index');
 
-//Route::get('/usuarios', 'UsuarioController@index');
-
-Route::get('/compras', 'CompraController@index');
+//Route::get('/compras', 'ComprasController@index');
 
 Route::get('/marcas', 'MarcaController@index');

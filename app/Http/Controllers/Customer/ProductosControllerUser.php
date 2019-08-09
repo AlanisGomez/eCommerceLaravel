@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Producto;
-
 use App\Cart;
+use App\Compra;
+use App\CompraDetalle;
+
 use Session;
 use Auth;
 
@@ -108,29 +110,38 @@ class ProductosControllerUser extends Controller
       if (!Session::has('cart')) {
           return redirect()->route('shop.shoppingCart');
       }
+
       $oldCart = Session::get('cart');
       $cart = new Cart($oldCart);
+      $productos = $cart->items;
 
-      Stripe::setApiKey('sk_test_fwmVPdJfpkmwlQRedXec5IxR');
       try {
-          $charge = Charge::create(array(
-              "amount" => $cart->totalPrice * 100,
-              "currency" => "PES",
-              "source" => $request->input('stripeToken'), // obtained with Stripe.js
-              "description" => "Test Charge"
-          ));
-          $order = new Order();
-          $order->cart = serialize($cart);
-          $order->address = $request->input('address');
-          $order->name = $request->input('name');
-          $order->payment_id = $charge->id;
+          $compra = new Compra();
+          $compra->fec_compra = now();
+          $compra->total = $cart->totalPrice + 100;
+          $compra->num_factura = rand();
+          $compra->medio_pago='TC';
+          $compra->tipo_comprobante='FC';
+          $compra->moneda = 'PES';
+          $compra->usuario_id = Auth::user()->id;
+          $compra->save();
 
-          Auth::user()->orders()->save($order);
+          foreach ($productos as $producto) {
+            $compraDet = new CompraDetalle();
+            $compraDet->cantidad = $producto['qty'] ;
+            $compraDet->talle = 'M';
+            $compraDet->producto_id = $producto['item']['id'];
+            $compraDet->compra_id = $compra->id;
+            $compraDet->save();
+
+          }
+
       } catch (\Exception $e) {
           return redirect()->route('checkout')->with('error', $e->getMessage());
       }
 
       Session::forget('cart');
-      return redirect()->route('product.index')->with('success', 'Successfully purchased products!');
+      return view('shop.endShop');
+
   }
 }

@@ -11,7 +11,7 @@ class Compra extends Model
     protected $guarded = [];
 
     public function Usuarios(){
-      return $this->belongsTo('App\User', 'usuario_id')
+      return $this->belongsTo('App\User', 'usuario_id');
     }
 
     public function productos(){
