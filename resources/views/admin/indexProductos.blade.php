@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-<body class="productos">
+<div class="productos">
 
 <div class="container">
 <section class="producto-detalle">
-
+<a href="/admin/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
   <div class="filters">
     <div class="ui-group">
       <div class="button-group js-radio-button-group" data-filter-group="categoria">
@@ -20,6 +20,17 @@
       </div>
     </div>
     </div>
+
+      <form  action="{{ url('customer/productos/buscar') }}" method="get">
+      <div class="p-4">
+        <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
+             <input class="form-control border-0" name="q"  type="search" aria-describedby="button-addon3"  placeholder="Search" style="background-color:rgba(255, 255, 255, 0.0);" >
+          <div class="input-group-append border-0">
+            <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fas fa-search mr-2"></i>Buscar</button>
+          </div>
+        </div>
+      </div>
+    </form>
 
   <div class="grid">
   <div class="row">
@@ -49,16 +60,10 @@
     @endforeach
   </div>
 </div>
-<a href="/admin/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
-<form class="" action="{{ url('/productos/buscar') }}" method="get">
-   <label for="q">Busca un producto</label>
-   <input type="text" name="q" value="">
-</form>
 </section>
 </div>
 {{$productos->links()}}
-
-</body>
+</div>
 @endsection
 
 @push('scripts')
@@ -112,4 +117,7 @@ return value;
 
 </script>
 
+@endpush
+@push('styles')
+  <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 @endpush

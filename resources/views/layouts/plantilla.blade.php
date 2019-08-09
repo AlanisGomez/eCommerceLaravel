@@ -29,6 +29,8 @@
   <link href="{{ asset('css/styles-cart.css') }}" rel="stylesheet">
 
 
+
+  @stack('styles')
   <title>@yield("title")</title>
 </head>
 <body>

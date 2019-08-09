@@ -110,6 +110,10 @@
     @endif
 @endsection
 
-@section('scripts')
+@push('scripts')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-@endsection
+@endpush
+
+@push('styles')
+  <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+@endpush

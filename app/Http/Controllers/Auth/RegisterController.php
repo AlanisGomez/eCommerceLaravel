@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'documento' =>  ['required', 'int', 'min:8'],
             'domicilio' =>['required', 'string', 'min:10', 'max:255'],
             'telefono' =>['required', 'int'],
-            'sexo' => ['required']
+            'sexo' => ['required'],
             'role' => ['required','in:admin,customer'],
          ],
           [

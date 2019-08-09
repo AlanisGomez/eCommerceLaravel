@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body class="productos">
+  <div class="productos">
 <div class="container">
 <section class="producto-detalle">
 
@@ -19,21 +19,18 @@
       </div>
     </div>
     </div>
-    <form class="card card-sm" action="{{ url('customer/productos/buscar') }}" method="get">
-         <div class="card-body row no-gutters align-items-center">
-                <div class="col-auto">
-                   <i class="fas fa-search h4 text-body"></i>
-                </div>
-                                   <!--end of col-->
-                   <div class="col">
-                 <input class="form-control form-control-lg form-control-borderless"name="q"  type="search" placeholder="Search topics or keywords">
-                   </div>
-                                   <!--end of col-->
-             <div class="col-auto">
-             <button class="btn btn-lg btn-success" type="submit">Search</button>
-             </div>         <!--end of col-->
-               </div>
-    </form>
+    <form  action="{{ url('customer/productos/buscar') }}" method="get">
+    <div class="p-4">
+      <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
+           <input class="form-control border-0" name="q"  type="search" aria-describedby="button-addon3"  placeholder="Search" style="background-color:rgba(255, 255, 255, 0.0);" >
+        <div class="input-group-append border-0">
+          <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fas fa-search mr-2"></i>Buscar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
 
   <div class="grid">
   <div class="row">
@@ -66,7 +63,7 @@
 </section>
 </div>
 {{$productos->links()}}
-</body>
+  </div>
 @endsection
 
 @push('scripts')
@@ -120,4 +117,7 @@ return value;
 
 </script>
 
+@endpush
+@push('styles')
+  <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 @endpush

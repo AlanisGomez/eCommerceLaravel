@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-body.productos{
-background-image: url('../images/fashion-2309519_1920.jpg');
+div.productos{
+background-image: url('../images/tiles-shapes.jpg');
 background-repeat: no-repeat;
 background-position:center;
 background-attachment: fixed;
@@ -17,12 +17,6 @@ font-family: 'Montserrat', sans-serif;
 width: 100% !important;
 }
 
-body.producto-detalle{
-background-image: url('../images/grey_wash_wall.png');
-box-sizing: border-box;
-font-family: 'Montserrat', sans-serif;
-width: 100% !important;
-}
 
 nav.navbar{
  background-color: rgba(0, 0, 0, 0.5)!important;
@@ -97,8 +91,8 @@ div.img-container {
   margin-right: auto;
   border:0px;
   margin-top: 30px;
-  background:rgba(0,0,0,0.4);
-  color:#fff;
+  background:rgba(255,255,255,0.4);
+  color:#343a40;
   margin-bottom: 0px;
 }
     .imagen-producto{
@@ -140,7 +134,7 @@ div.img-container {
 
     .card-body p.description{
       text-align: center;
-      color: #fff !important;
+      color: #343a40 !important;
     }
 
     .card-body h5.price{

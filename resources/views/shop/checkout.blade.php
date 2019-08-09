@@ -80,7 +80,11 @@
 
 @endsection
 
-@section('scripts')
+@push('scripts')
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript" src="{{ URL::to('src/js/checkout.js') }}"></script>
-@endsection
+@endpush
+
+@push('styles')
+  <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+@endpush

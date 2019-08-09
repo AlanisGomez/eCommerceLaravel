@@ -27,7 +27,7 @@
             <!-- Shopping cart table -->
             <div class="row justify-content-center">
               <div class="col-12 col-md-8">
-                <form method="post" enctype="multipart/form-data" action="{{'create'}}">
+                <form method="post" class="dropzone" enctype="multipart/form-data" action="{{'create'}}">
                 @csrf
                 <div class="form-group">
                   <label for="nombre">{{__('Nombre')}}<span>*</span></label>
@@ -52,7 +52,10 @@
               <input name="imagen" id="file-input" type="file" />
             </div>
           </div>
-              <div  class="col-12 col-md-4 upload-file">
+              <div  class="col-12 col-md-4">
+                <div class="">
+                   <input name="file" type="file" multiple />
+                 </div>
               </div>
             <button type="submit" class="btnSubmit">{{__('Agregar')}}</button>
             </form>
@@ -66,10 +69,13 @@
 
 @endsection
 
-@section('scripts')
+@push('scripts')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+@endpush
 
-@endsection
+@push('styles')
+  <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+@endpush

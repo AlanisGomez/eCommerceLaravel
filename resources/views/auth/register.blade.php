@@ -100,7 +100,8 @@
 
 
     <!-- FOMULARIO SEXO -->
-    <p class="form-row form-row-wide"> <label for="sexo">{{ __('Sexo') }}<span class="required">*</span></label> <div class="custom-control custom-radio">
+    <p class="form-row form-row-wide">
+      <label for="sexo">{{ __('Sexo') }}<span class="required">*</span></label> <div class="custom-control custom-radio">
     <input type="radio" id="masculino" name="sexo" class="custom-control-input  @error('sexo') is-invalid @enderror" value="m">
     <label class="custom-control-label" for="masculino">{{ __('Masculino') }}</label>
      </div>
@@ -115,6 +116,20 @@
     @enderror
   </p>
 
+  <p class="form-row form-row-wide">
+    <label for="role">{{__('Tipo de cuenta')}}</label>
+    <select class="form-control @error('role') is-invalid @enderror"  name="role" id="role">
+    <option value="customer" selected>Customer</option>
+    <option value="admin">Admin</option>
+    </select>
+    @error('role')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</p>
+
+
       <!-- FOMULARIO CONTRASEÑA -->
               <p class="form-row form-row-wide"><label for="password">{{ __('Password') }}<span class="required">*</span></label><input type="password"
                   class="input-text form-control @error('password') is-invalid @enderror" name="password" id="password" autocomplete="password">
@@ -124,13 +139,11 @@
                       </span>
                   @enderror
                 </p>
+                <p class="form-row form-row-wide"><label for="password_confirmation">{{ __('Confirm Password') }}<span class="required">*</span></label><input type="password"
+                    class="input-text form-control" name="password_confirmation" id="password-confirm" autocomplete="new-password">
+                  </p>
 
 
-            <!-- FOMULARIO CONFIRMAR CONTRASEÑA -->
-          <p>
-            <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
-                <input id="password-confirm" type="password" class="form-control input-text" name="password_confirmation"  autocomplete="new-password">
-          </p>
 
           <label class="">
             <input class="" name="terminos" type="checkbox" id="reg_terminos" value="{{ old('terminos') }}"><span>Acepto términos y condiciones</span><br>

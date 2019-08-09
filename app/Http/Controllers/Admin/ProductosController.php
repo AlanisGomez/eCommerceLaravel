@@ -52,7 +52,7 @@ class ProductosController extends Controller
           "nombre"=> "string|min:3",
           "descripcion"=> "string",
           "precio"=> "numeric|min:0|",
-          "foto" => "file"
+          "imagen" => "file"
         ],
         [
           "string"=> "El campo :attribute debe ser un texto",

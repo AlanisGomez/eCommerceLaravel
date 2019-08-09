@@ -69,3 +69,6 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
   <script src="{{asset('js/fullscreen')}}" defer></script>
   @endpush
+  @push('styles')
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+  @endpush
