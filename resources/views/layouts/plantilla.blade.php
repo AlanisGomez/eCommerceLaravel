@@ -49,9 +49,9 @@
   <li class="nav-item dropdown">
       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colecciones</a>
       <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{{ route('productos') }}">Mujer</a>
-        <a class="dropdown-item" href="{{ route('productos') }}"> Hombre</a>
-        <a class="dropdown-item" href="{{ route('productos') }}"> Niños</a>
+        <a class="dropdown-item" href="">Mujer</a>
+        <a class="dropdown-item" href=""> Hombre</a>
+        <a class="dropdown-item" href=""> Niños</a>
       </div>
   </li>
   </ul>

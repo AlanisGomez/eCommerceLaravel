@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-    'nombre', 'email', 'password','apellido', 'fec_nac', 'doc_tipo','documento', 'domicilio', 'telefono', 'sexo',
+    'nombre', 'email', 'password','apellido', 'fec_nac', 'doc_tipo','documento', 'domicilio', 'telefono', 'sexo', 'role'
     ];
 
     /**
@@ -38,7 +38,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function esAdmin(){
-      return ($this['rol']=='admin');
-    }
 }

@@ -7,9 +7,9 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-body.create{
-  background-image:url('../images/grey_wash_wall.png');
-}
+  body.create{
+    background-image:url('../images/grey_wash_wall.png');
+  }
   section.create {
     margin-top: 60px;
     margin-bottom:80px;
@@ -20,4 +20,10 @@ body.create{
     color:#fff;
   }
 
+  .upload-file {
+   padding: 30px;
+   border-left: 1px solid #ccc;
+   width: 100%;
+   height: 300px;
+  }
 }

@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'domicilio' =>['required', 'string', 'min:10', 'max:255'],
             'telefono' =>['required', 'int'],
             'sexo' => ['required']
+            'role' => ['required','in:admin,customer'],
          ],
           [
             "string"=> "El campo :attribute debe ser un texto",
@@ -90,7 +91,9 @@ class RegisterController extends Controller
             'documento' => $data['documento'],
             'domicilio' => $data['domicilio'],
             'telefono' => $data['telefono'],
-            'sexo' => $data['sexo']
+            'sexo' => $data['sexo'],
+            'role' => $data['role']
+
         ]);
 }
 

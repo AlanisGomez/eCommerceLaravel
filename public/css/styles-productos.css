@@ -51,8 +51,8 @@ div.descripcion article.producto-descripcion {
   color: #A0A0A0 !important;
 }
 div.cupon {
-  margin-top: 30px;
-  height: 300px;
+
+  height: auto;
 }
 img.cupon{
   display: block;
@@ -63,18 +63,12 @@ div.descripcion p.button {
   margin-top:15px;
 }
 
-section.producto-detalle div.imagen-container img {
-  width: 90%;
+div.imagen-container img.detalle {
+  width: 100%;
   object-fit: contain;
   margin: 0 auto;
   display: block;
-}
-
-section.producto-detalle div.relacion img.detalle {
-    width: 100%;
-    margin-bottom: 10px;
-    object-fit: contain;
-    height: 200px;
+  height: 500px;
 }
 
 
@@ -95,6 +89,7 @@ div.img-container {
   top:20px;
   padding: 20px;
 }
+
 
 .producto{
   display: block;

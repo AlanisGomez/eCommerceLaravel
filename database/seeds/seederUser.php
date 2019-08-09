@@ -24,7 +24,7 @@ class seederUser extends Seeder
                   "domicilio"=>"Av Monroe 1010",
                   "telefono"=>"01115415161",
                   "sexo"=>"f",
-                  "rol"=>"admin"
+                  "role"=>"admin"
               ],
               [
                 "nombre"=>"Usuario2",
@@ -37,7 +37,7 @@ class seederUser extends Seeder
                 "domicilio"=>"Av Monroe 1010",
                 "telefono"=>"01115425262",
                 "sexo"=>"m",
-                "rol"=>"customer"
+                "role"=>"customer"
             ]
           ]);
     }

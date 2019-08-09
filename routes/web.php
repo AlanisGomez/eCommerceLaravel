@@ -11,94 +11,83 @@
 |
 */
 
-Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
-'middleware' =>['auth', 'rol:admin']
-], function(){
-
-Route::get('/admin', 'ProductosController@welcomeAdmin');
-
-Route::get('/productos', 'ProductosController@index');
-
-Route::get('/productos','ProductosController@index')->name('productos');
-
-Route::get('/detalle/{id}',  'ProductosController@show');
-
-Route::get('/productos/buscar' , 'ProductosController@search');
-
-Route::get('/create', 'ProductosController@create');
-
-Route::post('/create','ProductosController@store');
-
-Route::get('/update/{id}', 'ProductosController@edit');
-
-Route::post('/update/{id}','ProductosController@update');
-
-Route::post('/borrarProducto', 'ProductosController@destroy');
-});
-
-
-
-Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
-'middleware' => ['auth', 'rol:customer']
-], function(){
-
-  Route::get('/productos', 'ProductosControllerUser@index');
-
-  Route::get('/productos','ProductosControllerUser@index')->name('productos');
-
-  Route::get('/detalle/{id}',  'ProductosControllerUser@show');
-
-  Route::get('/productos/buscar' , 'ProductosControllerUser@search');
-
-  Route::get('/', [
-      'uses' => 'ProductosControllerUser@index',
-      'as' => 'product.index'
-]);
-
-Route::get('/add-to-cart/{id}', [
-    'uses' => 'ProductosControllerUser@getAddToCart',
-    'as' => 'product.addToCart'
-]);
-
-Route::get('/reduce/{id}', [
-    'uses' => 'ProductosControllerUser@getReduceByOne',
-    'as' => 'product.reduceByOne'
-]);
-
-Route::get('/remove/{id}', [
-    'uses' => 'ProductoController@getRemoveItem',
-    'as' => 'product.remove'
-]);
-
-Route::get('/shopping-cart', [
-    'uses' => 'ProductosControllerUser@getCart',
-    'as' => 'product.shoppingCart'
-]);
-
-Route::get('/checkout', [
-    'uses' => 'ProductoController@getCheckout',
-    'as' => 'checkout',
-    'middleware' => 'auth'
-]);
-
-Route::post('/checkout', [
-    'uses' => 'ProductoController@postCheckout',
-    'as' => 'checkout',
-    'middleware' => 'auth'
-]);
-
-});
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/categorias', 'CategoriaController@index');
+  Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
-//Route::get('/usuarios', 'UsuarioController@index');
+Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
+'middleware' =>['auth', 'customer']], function(){
 
-Route::get('/compras', 'CompraController@index');
+    Route::get('/categorias', 'CategoriaControllerUser@index');
 
-Route::get('/marcas', 'MarcaController@index');
+    Route::get('/compras', 'CompraControllerUser@index');
+
+    Route::get('/marcas', 'MarcaControllerUser@index');
+
+    Route::get('/detalle/{id}',  'ProductosControllerUser@show');
+
+    Route::get('/productos/buscar' , 'ProductosControllerUser@search');
+
+    Route::get('/', [
+          'uses' => 'ProductosControllerUser@index',
+          'as' => 'product.index'
+    ]);
+
+    Route::get('/add-to-cart/{id}', [
+        'uses' => 'ProductosControllerUser@getAddToCart',
+        'as' => 'product.addToCart'
+    ]);
+
+    Route::get('/reduce/{id}', [
+        'uses' => 'ProductosControllerUser@getReduceByOne',
+        'as' => 'product.reduceByOne'
+    ]);
+
+    Route::get('/remove/{id}', [
+        'uses' => 'ProductoControllerUser@getRemoveItem',
+        'as' => 'product.remove'
+    ]);
+
+    Route::get('/shopping-cart', [
+        'uses' => 'ProductosControllerUser@getCart',
+        'as' => 'product.shoppingCart'
+    ]);
+
+    Route::get('/checkout', [
+        'uses' => 'ProductoControllerUser@getCheckout',
+        'as' => 'checkout',
+        'middleware' => 'auth'
+    ]);
+
+    Route::post('/checkout', [
+        'uses' => 'ProductoControllerUser@postCheckout',
+        'as' => 'checkout',
+        'middleware' => 'auth'
+    ]);
+  });
+
+
+
+    Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
+    'middleware' =>['auth', 'admin']], function(){
+
+        Route::get('/productos', 'ProductosController@index')->name('productos');
+
+        Route::get('/detalle/{id}',  'ProductosController@show');
+
+        Route::get('/productos/buscar' , 'ProductosController@search');
+
+        Route::get('/create', 'ProductosController@create');
+
+        Route::post('/create','ProductosController@store')->name('create');
+
+        Route::get('update/{id}', 'ProductosController@edit');
+
+        Route::post('/update/{id}','ProductosController@update')->name('update');
+
+        Route::post('/borrarProducto', 'ProductosController@destroy')->name('borrar');
+
+        Route::get('/usuarios', 'UsuarioController@index');
+    });
