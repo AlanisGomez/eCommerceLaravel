@@ -120,7 +120,7 @@ class ProductosControllerUser extends Controller
           $compra = new Compra();
           $compra->fec_compra = now();
           $compra->total = $cart->totalPrice + 100;
-          $compra->num_factura = rand();
+          $compra->num_factura = $compra->id+100000;
           $compra->medio_pago='TC';
           $compra->tipo_comprobante='FC';
           $compra->moneda = 'PES';
