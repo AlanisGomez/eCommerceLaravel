@@ -19,6 +19,21 @@
       </div>
     </div>
     </div>
+    <form class="card card-sm" action="{{ url('customer/productos/buscar') }}" method="get">
+         <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                   <i class="fas fa-search h4 text-body"></i>
+                </div>
+                                   <!--end of col-->
+                   <div class="col">
+                 <input class="form-control form-control-lg form-control-borderless"name="q"  type="search" placeholder="Search topics or keywords">
+                   </div>
+                                   <!--end of col-->
+             <div class="col-auto">
+             <button class="btn btn-lg btn-success" type="submit">Search</button>
+             </div>         <!--end of col-->
+               </div>
+    </form>
 
   <div class="grid">
   <div class="row">
@@ -48,10 +63,6 @@
     @endforeach
   </div>
 </div>
-<form class="" action="{{ url('/productos/buscar') }}" method="get">
-   <label for="q">Busca un producto</label>
-   <input type="text" name="q" value="">
-</form>
 </section>
 </div>
 {{$productos->links()}}

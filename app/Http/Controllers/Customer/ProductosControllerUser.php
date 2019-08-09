@@ -26,7 +26,7 @@ class ProductosControllerUser extends Controller
   }
 
   public function search(Request $request) {
-      $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->get();
+      $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->paginate(12);
 
     return view("/indexProductos", [
           'productos' => $productos

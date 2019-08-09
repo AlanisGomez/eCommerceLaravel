@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Auth::routes();
 
@@ -39,7 +29,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 
     Route::get('/detalle/{id}',  'ProductosControllerUser@show');
 
-    Route::get('/productos/buscar' , 'ProductosControllerUser@search');
+    Route::get('/productos/buscar' , 'ProductosControllerUser@search')->name('buscar');
 
     Route::get('/', [
           'uses' => 'ProductosControllerUser@index',
@@ -88,7 +78,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 
         Route::get('/detalle/{id}',  'ProductosController@show');
 
-        Route::get('/productos/buscar' , 'ProductosController@search');
+        Route::get('/productos/buscar' , 'ProductosController@search')->name('buscar');
 
         Route::get('/create', 'ProductosController@create');
 
