@@ -5,29 +5,21 @@
 @endsection
 
 @section('content')
-<body class="home">
 <section class="banner-video">
  <div class="tituloBanner">
    <h1>Splatter CO.</h1>
-     <div class="redes-sociales">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook-square"></i></a>
-        <a href="#"><i class="fab fa-twitter-square"></i></a>
-     </div>
     </div>
     <div class="video-banner">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/l6XlXK4zd3s?loop=1&rel=0&disablekb=1&wmode=transparent&widgetid=1&hd=1&showinfo=0&modestbranding=1&autoplay=1&mute=1&enablejsapi=1&controls=0&playlist=l6XlXK4zd3s" scrolling="no" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-top:-55px;"></iframe>
     </div>
-      <div class="imagen-banner">
-        <img src="" alt="" class="img-banner">
+    <div class="imagen-banner">
+        <img src="{{ asset('images/banner.png') }}" alt="" class="img-banner">
     </div>
 </section>
 <section class="carrousel-productos">
   <div class="carousel" data-flickity='{ "fullscreen": true, "lazyLoad": 2, "wrapAround": true, "autoPlay": 2500  }'>
     @foreach ($productos as $producto)
-
-    <img class="carousel-image" data-flickity-lazyload="{{$producto->imagen}}" />
-
+  <img class="carousel-image" data-flickity-lazyload="{{$producto->imagen}}" />
     @endforeach
   </div>
 </section>
@@ -142,7 +134,6 @@
   </div>
 </div>
 </section>
-</body>
 @endsection
 
 @push('scripts')

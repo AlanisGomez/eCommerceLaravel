@@ -168,7 +168,6 @@ class ProductosController extends Controller
   }
 
 
-////////////////////////////////////////////CART FUNCTIONS
   public function getAddToCart(Request $request, $id)
   {
       $producto= Producto::find($id);

@@ -18,7 +18,7 @@
           <textarea name="consulta" rows="4" cols="100%" placeholder="Consulta"></textarea>
           </p>
         <p>
-          <input type="submit" value="Enviar" class="btnSubmit btn-footer">
+          <input type="submit" value="Enviar" class="btnSubmit justifyCenter">
         </p>
       </form>
           </div>
@@ -29,7 +29,7 @@
           <a href="#"><i class="fab fa-twitter-square"></i></a>
       </div>
       <div class="imagen-container">
-        <img src="{{ asset('logotipo.png') }}" alt=""
+        <img src="{{ asset('images/logotipo.png') }}" alt=""
         style = "width:100px; height:100px; margin-left:15px;">
       </div>
     </div>

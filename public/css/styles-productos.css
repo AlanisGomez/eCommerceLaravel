@@ -1,3 +1,4 @@
+@media only screen and (min-device-width : 200px){
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +9,38 @@
 
 div.productos{
 background-image: url('../images/tiles-shapes.jpg');
-background-repeat: no-repeat;
 background-position:center;
 background-attachment: fixed;
 background-size: 100%;
 box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
 width: 100% !important;
+
+
+}
+
+ul.pagination {
+  margin-top: 50px;
+ padding-bottom: 400px;
+}
+.page-link {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7)!important;
+  color:#343a40!important;
+  margin-bottom: 50px!important;
+
+}
+
+.page-link:hover {
+background-color: rgba(52, 58, 64, 0.7)!important;
+color:#fff!important;
+}
+
+.page-link:focus{
+background-color: rgb(52, 58, 64)!important;
+color:#fff!important;
+border: 0px;
+border-color: transparent!important;
 }
 
 
@@ -28,7 +54,6 @@ section.more-products{
 
 section.producto-detalle {
   margin-top:60px;
-    margin-bottom:80px;
 }
 
 section.producto-detalle h2{
@@ -85,7 +110,7 @@ div.img-container {
 }
 
 
-.producto{
+.producto-card{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -212,7 +237,7 @@ div.img-container {
 
   .ui-group {
     display: block;
-    margin-left:400px;
+    margin-left:100px;
   }
 
   .ui-group .button-group {
@@ -251,3 +276,18 @@ div.img-container {
       outline: none;
       box-shadow: none;
   }
+}
+
+@media only screen and (min-device-width : 769px)  {
+
+  ul.pagination {
+    margin-top: 50px;
+   padding-bottom: 0px;
+  }
+  .ui-group {
+    display: block;
+    margin-left:400px;
+  }
+
+
+}

@@ -87,4 +87,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
         Route::get('update/{id}', 'ProductosController@edit');
 
         Route::get('/usuarios', 'UsuarioController@index');
+
+          Route::post('/borrar', 'ProductosController@destroy')->name('borrar');
+
     });

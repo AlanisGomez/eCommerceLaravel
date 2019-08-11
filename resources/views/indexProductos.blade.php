@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="productos">
+<div class="productos">
 <div class="container">
 <section class="producto-detalle">
 
@@ -42,7 +42,7 @@
     @foreach ($productos as $producto)
       <div class="col-12 col-md-3 color-shape man">
         <a href="/customer/detalle/{{$producto->id}}">
-        <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
+        <div class="card producto-card" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
               <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">
