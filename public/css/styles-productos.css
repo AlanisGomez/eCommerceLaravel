@@ -70,8 +70,8 @@ div.descripcion article.producto-descripcion {
   color: #A0A0A0 !important;
 }
 div.cupon {
-
   height: auto;
+  padding-bottom: 500px;
 }
 img.cupon{
   display: block;
@@ -120,6 +120,7 @@ div.img-container {
   color:#343a40;
   margin-bottom: 0px;
 }
+
     .imagen-producto{
       display:block;
       margin-left: auto;

@@ -24,7 +24,7 @@
                  <img class="detalle" src="{{$producto->imagen}}" alt="">
                </div>
               </div>
-            <div class="col-6 col-md-5 relacion">
+            <div class="col-12 col-md-5 relacion">
               <div class="col-12">
                 <article class="producto-descripcion">
                  <h2 class="display-4">{{$producto->nombre}}</h2>
