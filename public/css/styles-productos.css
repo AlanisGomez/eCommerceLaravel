@@ -8,6 +8,7 @@
 }
 
 div.productos{
+background-repeat: no-repeat;
 background-image: url('../images/tiles-shapes.jpg');
 background-position:center;
 background-attachment: fixed;

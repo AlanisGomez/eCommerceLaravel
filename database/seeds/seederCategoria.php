@@ -19,7 +19,7 @@ class seederCategoria extends Seeder
                     "imagen"=>"images/mujer/eCommerce1.png"
                   ],
                   [
-                    "nombre"=>"Homber",
+                    "nombre"=>"Hombre",
                     "descripcion"=>"Ropa de Hombre",
                     "imagen"=>"images/hombre/eCommerce4.png"
                   ],
