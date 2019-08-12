@@ -35,7 +35,7 @@ Finalizar Compra
             </div>
             <tr>
               <td>
-                <img src="{{ $producto->imagen }}"alt="" width="70" class="img-fluid rounded shadow-sm">
+                <img src="../../{{ $producto->imagen }}"alt="" width="150" class="img-fluid rounded shadow-sm" style="text-align: center">
               </td>
               <td>
                 <h5 class="mb-0">{{$producto->nombre}}</h5>

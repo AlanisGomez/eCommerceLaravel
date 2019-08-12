@@ -25,6 +25,15 @@ class ProductosControllerUser extends Controller
       ]);
   }
 
+  public function indexByCategoria($id)
+  {
+      $productos=Producto::where('categoria_id','=',$id)->get();
+
+      return view('/indexProductos', [
+        'productos' => $productos,
+      ]);
+  }
+
   public function search(Request $request) {
       $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->paginate(12);
 
@@ -120,11 +129,13 @@ class ProductosControllerUser extends Controller
           $compra = new Compra();
           $compra->fec_compra = now();
           $compra->total = $cart->totalPrice + 100;
-          $compra->num_factura = $compra->id+100000;
           $compra->medio_pago='TC';
           $compra->tipo_comprobante='FC';
+          $compra->num_factura =0;
           $compra->moneda = 'PES';
           $compra->usuario_id = Auth::user()->id;
+          $compra->save();
+          $compra->num_factura = $compra->id+100000;
           $compra->save();
 
           foreach ($productos as $producto) {

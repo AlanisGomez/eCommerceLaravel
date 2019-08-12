@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('css/styles-dash.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullscreen.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles-productos.css') }}" rel="stylesheet">

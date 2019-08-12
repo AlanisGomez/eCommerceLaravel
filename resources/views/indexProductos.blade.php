@@ -13,9 +13,9 @@
     <div class="ui-group">
       <div class="button-group js-radio-button-group" data-filter-group="categoria">
         <button class="button is-checked" data-filter="">Todo</button>
-        <button class="button" data-filter=".woman">Mujer</button>
-        <button class="button" data-filter=".man">Hombre</button>
-        <button class="button" data-filter=".child">Niños</button>
+        <button class="button" data-filter=".Mujer">Mujer</button>
+        <button class="button" data-filter=".Hombre">Hombre</button>
+        <button class="button" data-filter=".Niños">Niños</button>
       </div>
     </div>
     </div>
@@ -35,7 +35,10 @@
   <div class="grid">
   <div class="row">
     @foreach ($productos as $producto)
-      <div class="col-12 col-md-3 color-shape man">
+      <div class="" style="display:none">
+        {{$categoria = App\Categoria::find($producto->categoria_id)}}
+      </div>
+      <div class="col-12 col-md-3 color-shape {{$categoria->nombre}}">
         <a href="/customer/detalle/{{$producto->id}}">
         <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
@@ -67,6 +70,7 @@
 @endsection
 
 @push('scripts')
+
 <script
 src="https://code.jquery.com/jquery-3.4.1.js"
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -116,7 +120,11 @@ return value;
 }
 
 </script>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('body').css('background-image', 'url(../images/tiles-shapes.jpg');
+    });
+</script>
 @endpush
 @push('styles')
   <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
