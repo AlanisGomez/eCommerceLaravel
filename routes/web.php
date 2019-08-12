@@ -99,3 +99,26 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
         'middleware' => 'auth'
     ]);
   });
+
+
+
+    Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
+    'middleware' =>['auth', 'admin']], function(){
+
+        Route::get('/productos', 'ProductosController@index')->name('productos');
+
+        Route::get('/detalle/{id}',  'ProductosController@show');
+
+        Route::get('/productos/buscar' , 'ProductosController@search')->name('buscar');
+
+        Route::get('/create', 'ProductosController@create');
+
+        Route::post('/create','ProductosController@store')->name('create');
+
+        Route::get('update/{id}', 'ProductosController@edit');
+
+        Route::get('/usuarios', 'UsuarioController@index');
+
+          Route::post('/borrar', 'ProductosController@destroy')->name('borrar');
+
+    });

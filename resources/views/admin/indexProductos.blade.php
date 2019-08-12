@@ -20,7 +20,8 @@
       </div>
     </div>
     </div>
-
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8">
       <form  action="{{ url('customer/productos/buscar') }}" method="get">
       <div class="p-4">
         <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
@@ -31,13 +32,14 @@
         </div>
       </div>
     </form>
-
+  </div>
+</div>
   <div class="grid">
   <div class="row">
     @foreach ($productos as $producto)
       <div class="col-12 col-md-3 color-shape man">
         <a href="detalle/{{$producto->id}}">
-        <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
+        <div class="card producto-card" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
               <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">

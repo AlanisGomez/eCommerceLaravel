@@ -14,9 +14,6 @@
 
   body{
     margin-bottom: 320px;
-  }
-  body.home {
-   background-image: url('../images/grey_wash_wall.png');
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     width: 100% !important;
@@ -25,6 +22,7 @@
   main.mainContent{
     padding-top: 50px;
   }
+
   nav.navbar{
     background-color: rgba(0, 0, 0, 0.5)!important;
     display: inline-flex;
@@ -32,7 +30,6 @@
     width: 100%;
     z-index: 99999;
     transition: all ease .5s;
-
  }
 
  .navbar.solid {
@@ -63,8 +60,8 @@ div.imagen-banner img.img-banner {
      width: 100%;
 }
 
- div.video-banner  {
-display:none;
+div.video-banner  {
+  display:none;
  }
 
  div.video-banner  iframe {
@@ -75,40 +72,21 @@ display:none;
   display: none;
   }
 
-  div.tituloBanner div.redes-sociales{
-   display: none;
-  }
-
-
-  section.about, section.sucursales{
-    padding-left:5%;
-    padding-right:5%;
-   }
-
-
-  .titulo-division{
-     text-align: center;
-     text-transform: uppercase;
-     margin-bottom: 30px;
-     margin-top: 30px;
-    }
-
-    section.division {
-    background-color:rgba(0,0,0,0.8);
-    padding: 5px;
-    color:#fff;
-    margin-top: 80px;
-   }
-
    section.marcas {
-     background-color:black;
-     height: 500px;
-     margin-bottom: 50px;
-     margin-top: 50px;
-     padding: 3%;
-   }
+       width: 100% !important;
+       background-image: url('../images/tiles-shapes.jpg');
+       background-repeat: no-repeat;
+       background-position:center;
+       background-attachment: inherit;
+       background-size: 100%;
+       margin-top:50px;
+       margin-bottom:50px;
+       padding:2%;
+       box-sizing: border-box;
+       height: 400px;
+       }
 
-   section.marcas h2{
+  section.marcas h2{
   color: #fff;
   text-transform: uppercase;
    }
@@ -126,11 +104,11 @@ display:none;
      z-index: 10;
       }
 
-      .collection-title:hover {
+    .collection-title:hover {
        background-color: #0000005a;
       }
 
-      .collection-title h2 {
+    .collection-title h2 {
         top: 40%;
         display: -webkit-inline-box;
         position: absolute;
@@ -148,22 +126,29 @@ display:none;
         color: #fff;
       }
 
-  .producto{
-    margin-bottom: 10px;
-    }
-
   section.about-us {
       margin-top: 50px;
     }
 
   section.categorias {
-        background-color: black;
+
+        width: 100% !important;
+        background-image: url('../images/tiles-shapes.jpg');
+        background-position:center;
+        background-attachment: fixed;
+        background-size: 100%;
         margin-top:50px;
         margin-bottom:50px;
         padding:2%;
+        box-sizing: border-box;
+
       }
 
-      .div-img{
+      .producto:last-child {
+        margin-bottom: 30px;
+      }
+
+    section.categorias .div-img{
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -171,6 +156,7 @@ display:none;
 
    section.newsletter {
     margin:50px;
+     margin-bottom: 700px;
    }
 
 footer {
@@ -181,33 +167,23 @@ footer {
   position: inherit;
   bottom: 0px;
   width: 100%;
-  height: 320px;
+
 }
 
-article.info-contacto {
+footer article.info-contacto {
   margin-top: 30px;
 }
 
- div.redes-sociales-footer a {
+footer div.redes-sociales-footer a {
   text-decoration: none;
 }
 
-div.redes-sociales-footer i {
+footer div.redes-sociales-footer i {
   font-size: 40px;
   margin-left:20px;
   margin-top: 30px;
   color: #fff;
 }
-
-
-  .titulo-division{
-   text-align: center;
-   text-transform: uppercase;
-   margin-bottom: 30px;
-   margin-top: 30px;
-   color:#fff;
-  }
-
 
   .google-maps {
         position: relative;
@@ -298,11 +274,6 @@ div.redes-sociales-footer i {
     box-sizing: border-box;
   }
 
-  .btn-footer {
-    margin-top: 20px;
-    margin: 0 auto;
-  }
-
   .input-text {
     box-sizing: border-box;
     border: 1px solid #ddd;
@@ -318,10 +289,6 @@ div.redes-sociales-footer i {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: color .3s, border .3s, background .3s, opacity .3s;
   }
-
-.carousel {
-  background-image: url('../imgs/grey_wash_wall.png');
-}
 
 .carousel-image {
   display: block;
@@ -344,8 +311,6 @@ div.redes-sociales-footer i {
  }
 
 }
-
-
 
 @media only screen and (min-device-width : 769px)  {
 
@@ -391,11 +356,46 @@ div.redes-sociales-footer i {
     }
 
    div.imagen-banner img.img-banner {
-        display:none;
+     display:none;
    }
 
     section.carrousel-productos {
       margin-top: -50px;
      }
 
-}
+  
+  section.marcas {
+        width: 100% !important;
+        max-height: 100%;
+        background-image: url('../images/tiles-shapes.jpg');
+        background-repeat: no-repeat;
+        background-position:center;
+        background-attachment: fixed;
+        background-size: 100%;
+        margin-top:50px;
+        margin-bottom:50px;
+        padding:2%;
+        box-sizing: border-box;
+        height: 400px;
+    }
+
+
+      section.categorias {
+
+            width: 100% !important;
+            background-image: url('../images/tiles-shapes.jpg');
+            background-repeat: no-repeat;
+            background-position:center;
+            background-attachment: fixed;
+            background-size: 100%;
+            margin-top:50px;
+            margin-bottom:50px;
+            padding:2%;
+            box-sizing: border-box;
+
+          }
+
+          section.newsletter {
+           margin:50px;
+            margin-bottom: 0px;
+          }

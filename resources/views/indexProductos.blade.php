@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="productos">
+<div class="productos">
 <div class="container">
 <section class="producto-detalle">
 
@@ -19,16 +19,21 @@
       </div>
     </div>
     </div>
-    <form  action="{{ url('customer/productos/buscar') }}" method="get">
-    <div class="p-4">
-      <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
-           <input class="form-control border-0" name="q"  type="search" aria-describedby="button-addon3"  placeholder="Search" style="background-color:rgba(255, 255, 255, 0.0);" >
-        <div class="input-group-append border-0">
-          <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fas fa-search mr-2"></i>Buscar</button>
-        </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+          <form  action="{{ url('customer/productos/buscar') }}" method="get">
+          <div class="p-4">
+            <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
+                 <input class="form-control border-0" name="q"  type="search" aria-describedby="button-addon3"  placeholder="Search" style="background-color:rgba(255, 255, 255, 0.0);" >
+              <div class="input-group-append border-0">
+                <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fas fa-search mr-2"></i>Buscar</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </form>
 
 
 
@@ -40,7 +45,7 @@
       </div>
       <div class="col-12 col-md-3 color-shape {{$categoria->nombre}}">
         <a href="/customer/detalle/{{$producto->id}}">
-        <div class="card producto" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
+        <div class="card producto-card" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
               <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">
