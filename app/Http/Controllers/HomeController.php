@@ -31,8 +31,5 @@ class HomeController extends Controller
         ]);
 
     }
-
-    public function indexAdmin(){
-      return view('admin\dashboard');
-    }
+    
 }

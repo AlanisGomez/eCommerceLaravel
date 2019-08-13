@@ -133,9 +133,10 @@ class ProductosController extends Controller
     $productoUpdate =Producto::find($id);
 
     $ruta = $request->file("imagen")->store("public");
-    $nombreArchivo = basename($ruta);
-
-    $productoUpdate->imagen = $nombreArchivo;
+    if(!empty($ruta)){
+      $nombreArchivo = basename($ruta);
+      $productoUpdate->imagen = $nombreArchivo;
+    }
 
     $productoUpdate->nombre = $request["nombre"];
     $productoUpdate->descripcion = $request["descripcion"];

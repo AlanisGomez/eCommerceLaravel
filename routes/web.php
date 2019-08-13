@@ -6,18 +6,18 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@indexAdmin')->name('homeAdmin');
+Route::get('/home', 'HomeAdminController@indexAdmin')->name('homeAdmin');
 
 Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
 Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
 'middleware' =>['auth', 'admin']], function(){
 
-    Route::get('/home', 'HomeController@indexAdmin')->name('homeAdmin');
+    Route::get('/home', 'HomeAdminController@indexAdmin')->name('homeAdmin');
 
     Route::get('/productos', 'ProductosController@index')->name('productos');
 
-    Route::get('/detalle/{id}',  'ProductosController@show');
+    Route::get('/detalle/{id}',  'ProductosController@show')->name('productoDetalle');
 
     Route::get('/productos/buscar' , 'ProductosController@search')->name('buscar');
 
@@ -26,6 +26,8 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
     Route::post('/create','ProductosController@store')->name('create');
 
     Route::get('update/{id}', 'ProductosController@edit');
+
+    Route::post('update/{id}', 'ProductosController@update');
 
     Route::get('/usuarios', 'UsuarioController@index');
 });

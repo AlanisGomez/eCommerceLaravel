@@ -22,8 +22,8 @@ Detalle
             <div class="info-box">
               <span class="info-box-icon bg-aqua"><i class="fas fa-tshirt"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Productos</span>
+              <div class="info-box-content dark-card">
+                <span class="info-box-text" style="font-weight:bold;"><a href="{{ route('productos') }}">Productos</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -34,8 +34,8 @@ Detalle
             <div class="info-box">
               <span class="info-box-icon bg-red"><i class="fas fa-tags"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Marcas</span>
+              <div class="info-box-content dark-card">
+                <span class="info-box-text" style="font-weight:bold;"><a href="#">Marcas</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -50,8 +50,8 @@ Detalle
             <div class="info-box">
               <span class="info-box-icon bg-green"><i class="fas fa-shopping-cart"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Ventas</span>
+              <div class="info-box-content dark-card">
+                <span class="info-box-text" style="font-weight:bold;"><a href="#">Ventas</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -62,8 +62,8 @@ Detalle
             <div class="info-box">
               <span class="info-box-icon bg-yellow"><i class="fas fa-users"></i></span>
 
-              <div class="info-box-content">
-                <span class="info-box-text">Usuarios</span>
+              <div class="info-box-content dark-card">
+                <span class="info-box-text" style="font-weight:bold;"><a href="#">Usuarios</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -77,7 +77,7 @@ Detalle
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Reporte mensual de ventas</h3>
+                <h3 class="box-title">Reporte anual de ventas</h3>
 
                 <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -101,7 +101,7 @@ Detalle
                 <div class="row">
                   <div class="col-md-8">
                     <p class="text-center">
-                      <strong>Ventas: 1 Julio, 2019 - 31 Julio, 2019</strong>
+                      <strong>Ventas: 1 Enero, 2019 - 31 Julio, 2019</strong>
                     </p>
 
                     <div class="chart">
@@ -465,6 +465,11 @@ Detalle
 <script type="text/javascript" src="{{ asset('js/chart.js') }}" defer></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}" defer></script>
 <script type="text/javascript" src="{{ asset('js/demochart.js') }}" defer></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('body').css('background-color', '#ecf0f5');
+    });
+</script>
 @endpush
 @push('styles')
 <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
