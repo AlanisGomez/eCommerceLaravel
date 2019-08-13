@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col-12 col-md-7">
               <div class="imagen-container">
-                 <img class="detalle" src="{{$producto->imagen}}" alt="">
+                 <img class="detalle" src="../../{{$producto->imagen}}" alt="">
                </div>
               </div>
             <div class="col-12 col-md-5 relacion">

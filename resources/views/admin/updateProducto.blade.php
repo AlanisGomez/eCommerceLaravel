@@ -30,20 +30,20 @@
               @csrf
               <div class="form-group">
                 <label for="nombre">{{__('Nombre')}}<span>*</span></label>
-                <input type="producto" class="form-control" id="producto" name="nombre" placeholder="{{$producto->nombre}}">
+                <input type="producto" class="form-control" id="producto" name="nombre" value="{{$producto->nombre}}">
               </div>
             <div class="form-group">
              <label for="descripcion">{{__('Descripcion')}} <span>*</span></label>
-             <textarea name="descripcion" class="form-control" id="descripcion" rows="3" placeholder="{{$producto->descripcion}}"></textarea>
+             <textarea name="descripcion" class="form-control" id="descripcion" rows="3" value="">{{$producto->descripcion}}</textarea>
            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="precio">{{__('Precio')}}<span>*</span></label>
-                <input type="text" class="form-control"  name="precio" id="precio" placeholder="{{$producto->precio}}" required>
+                <input type="text" class="form-control"  name="precio" id="precio" value="{{$producto->precio}}" required>
               </div>
               <div class="form-group col-md-6">
               <label for="stock">{{__('Stock')}}<span>*</span></label>
-              <input type="number" class="form-control" name="stock" value="" placeholder="{{$producto->stock}}" required>
+              <input type="number" class="form-control" name="stock" value="{{$producto->stock}}" required>
               </div>
             </div>
             <div class="form-group">
