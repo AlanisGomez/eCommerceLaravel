@@ -48,7 +48,7 @@
         <div class="card producto-card" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
           <div class="container">
             <div class="img-container" >
-              <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">
+              <img src="../../{{$producto->imagen}}" class="imagen-producto" alt="...">
             </div>
           </div>
           <div class="card-body">

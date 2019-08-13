@@ -5,24 +5,25 @@
 @endsection
 
 @section('content')
-<div class="productos">
-
+<div class="">
 <div class="container">
 <section class="producto-detalle">
-<a href="/admin/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
+  <div class="" style="width:200px">
+    <a href="/admin/create" class="btn btn-dark rounded-pill py-2 btn-block" role="button" aria-pressed="true">Agregar producto</a>
+  </div>
   <div class="filters">
     <div class="ui-group">
       <div class="button-group js-radio-button-group" data-filter-group="categoria">
         <button class="button is-checked" data-filter="">Todo</button>
-        <button class="button" data-filter=".woman">Mujer</button>
-        <button class="button" data-filter=".man">Hombre</button>
-        <button class="button" data-filter=".child">Niños</button>
+        <button class="button" data-filter=".Mujer">Mujer</button>
+        <button class="button" data-filter=".Hombre">Hombre</button>
+        <button class="button" data-filter=".Niños">Niños</button>
       </div>
     </div>
     </div>
 <div class="row justify-content-center">
   <div class="col-12 col-md-8">
-      <form  action="{{ url('customer/productos/buscar') }}" method="get">
+      <form  action="{{ url('admin/productos/buscar') }}" method="get">
       <div class="p-4">
         <div class="input-group mb-4 border rounded-pill p-2" style="background-color:rgba(255, 255, 255, 0.6);">
              <input class="form-control border-0" name="q"  type="search" aria-describedby="button-addon3"  placeholder="Search" style="background-color:rgba(255, 255, 255, 0.0);" >
@@ -34,38 +35,49 @@
     </form>
   </div>
 </div>
-  <div class="grid">
-  <div class="row">
-    @foreach ($productos as $producto)
-      <div class="col-12 col-md-3 color-shape man">
-        <a href="detalle/{{$producto->id}}">
-        <div class="card producto-card" style="width: 100%;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;">
-          <div class="container">
-            <div class="img-container" >
-              <img src="{{$producto->imagen}}" class="imagen-producto" alt="...">
-            </div>
-          </div>
-          <div class="card-body">
-          <p class="description">{{$producto->nombre}}</p>
-          <hr>
-          <h5 class="price">${{$producto->precio}}</h5>
-          </div>
-        </div>
-        </a>
-        <div class="addCartBtnCell">
-          <a href="{{ route('product.addToCart', ['id' => $producto->id]) }}" class="description addCartBtnTxt">Agregar al carrito
-            <i class="fa fa-shopping-cart" aria-hidden="true" style="padding-left: 10px;">
-            </i>
-          </a>
-          </div>
-      </div>
-    @endforeach
-  </div>
+<div class="grid">
+
 </div>
-</section>
+<div class="pt-3">
+    <div class="container">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Ver Detalle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <div class="grid">
+                    @foreach ($productos as $producto)
+                      <div class="" style="display:none">
+                        {{$categoria = App\Categoria::find($producto->categoria_id)}}
+                      </div>
+                    <tr class="{{$categoria->nombre}}">
+                        <td><img src="../../{{ $producto->imagen }}"alt="" width="150" class="img-fluid rounded shadow-sm" style="text-align: center"></td>
+                        <td>{{$producto->nombre}}</td>
+                        <td>{{$producto->descripción}}</td>
+                        <td>{{$producto->precio}}</td>
+                        <td>{{$producto->stock}}</td>
+                        <td><a href="detalle/{{$producto->id}}" class="text-dark"><i class="fa fa-search"></i></a></td>
+                    </tr>
+                    @endforeach
+                  </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </div>
 {{$productos->links()}}
 </div>
+</section>
+
 @endsection
 
 @push('scripts')
@@ -118,7 +130,11 @@ return value;
 }
 
 </script>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('body').css('background-image', 'url(../images/tiles-shapes.jpg');
+    });
+</script>
 @endpush
 @push('styles')
 

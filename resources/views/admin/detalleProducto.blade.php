@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col-12 col-md-7">
               <div class="imagen-container">
-                 <img class="detalle" src="{{$producto->imagen}}" alt="">
+                 <img class="detalle" src="../../{{$producto->imagen}}" alt="">
                </div>
               </div>
             <div class="col-12 col-md-5 relacion">
@@ -34,11 +34,11 @@
                  <h5>Precio: ${{$producto->precio}}</h5>
               </article>
               <p>
-                <a href="/admin/update/{{$producto->id}}" class="btnSubmit" role="button" aria-pressed="true">Modificar</a>
+                <a href="/admin/update/{{$producto->id}}" class="btn btn-dark rounded-pill py-2 btn-block" role="button" aria-pressed="true">Modificar</a>
                 <form class="" action="{{route('borrar')}}" method="post">
                  {{csrf_field()}}
                  <input type="hidden" name="id" value="{{$producto->id }}">
-                 <input type="submit" name="" value="Borrar Producto" class="btnSubmit">
+                 <input type="submit" name="" value="Borrar Producto" class="btn btn-dark rounded-pill py-2 btn-block">
                </form>
               </p>
             </div>

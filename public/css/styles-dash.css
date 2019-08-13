@@ -50,6 +50,7 @@ body {
 }
 
 .content-wrapper {
+  padding: 50px 50px 0 50px;
     -webkit-transition: -webkit-transform .3s ease-in-out, margin .3s ease-in-out;
     -moz-transition: -moz-transform .3s ease-in-out, margin .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out, margin .3s ease-in-out;
@@ -80,6 +81,20 @@ body {
         -o-transform: translate(230px, 0);
         transform: translate(230px, 0)
     }
+}
+
+.dark-card{
+  background-color: #343a40;
+    min-height: 90px;
+    text-align: center;
+    padding-top: 30px !important;
+    color: #fff;
+}
+.dark-card span.info-box-text a{
+  color: #fff !important;
+}
+.dark-card span.info-box-text a:hover{
+  color:#00ffe5 !important;
 }
 
 .content-wrapper {

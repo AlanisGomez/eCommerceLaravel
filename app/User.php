@@ -38,4 +38,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function esCustomer(){
+      return ($this->role=='customer');
+    }
+
+    public function esAdmin(){
+      return ($this->role=='admin');
+    }
+
 }

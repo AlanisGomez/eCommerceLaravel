@@ -21,7 +21,7 @@ Route::get('/correrMigracion',function(){
 
     Route::get('/productos', 'ProductosController@index')->name('productos');
 
-    Route::get('/detalle/{id}',  'ProductosController@show');
+    Route::get('/detalle/{id}',  'ProductosController@show')->name('productoDetalle');
 
     Route::get('/productos/buscar' , 'ProductosController@search')->name('buscar');
 
@@ -31,7 +31,7 @@ Route::get('/correrMigracion',function(){
 
     Route::get('update/{id}', 'ProductosController@edit');
 
-    Route::get('update/{id}', 'ProductosController@update');
+    Route::post('update/{id}', 'ProductosController@update');
 
     Route::get('/usuarios', 'UsuarioController@index');
 
@@ -56,7 +56,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
       'as' => 'checkout',
       'middleware' => 'auth'
   ]);
-  
+
   Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
   Route::get('/compras', 'ComprasController@index')->name('compras');

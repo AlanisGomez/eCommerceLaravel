@@ -123,12 +123,16 @@
         Recibí nuestras promociones exclusivas y enterate de todas las novedades del mundo de la moda
       </p>
        <p>Suscribite a nuestro newsletter</p>
-       <p>
-         <input class="input-text" type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Ingresá tu e-mail" value="" id="subscribe-field">
-       </p>
-       <p>
-         <input type="submit" value="Suscribir" class="btnSubmit">
-       </p>
+       <div class="py-2">
+         <p>
+           <input class="input-text" type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Ingresá tu e-mail" value="" id="subscribe-field">
+         </p>
+       </div>
+       <div class="py-2" style="width:80%; margin-left:auto; margin-right:auto;">
+         <p>
+           <input type="submit" value="Suscribir" class="btn btn-dark rounded-pill py-2 btn-block">
+         </p>
+       </div>
      </form>
     </div>
   </div>
