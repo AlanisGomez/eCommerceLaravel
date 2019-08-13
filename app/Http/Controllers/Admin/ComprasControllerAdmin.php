@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Compra;
+use App\CompraDetalle;
+use App\Producto;
+use Auth;
 
-use App\Categoria;
-
-class CategoriasController extends Controller
+class ComprasControllerAdmin extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +18,20 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-      $categorias=Categoria::paginate(12);
+      $compras=Compra::all();    //::where('usuario_id', '=',$id)->get();
 
-      return view('admin/indexCategorias', [
-        'categorias' => $categorias,
+      return view('admin\indexVentas', [
+        'compras' => $compras,
+      ]);
+    }
+
+    public function indexByUser()
+    {
+      $id = Auth::user()->id;
+      $compras=Compra::where('usuario_id', '=',$id)->get();
+
+      return view('admin\indexVentas', [
+        'compras' => $compras,
       ]);
     }
 
@@ -52,7 +64,14 @@ class CategoriasController extends Controller
      */
     public function show($id)
     {
-        //
+      $compra = Compra::find($id);
+      $detalles= CompraDetalle::where('compra_id','=',$id)->get();
+      return view('customer\compraDetalle', [
+        'detalles' => $detalles,
+        'fec_compra' =>$compra->fec_compra,
+        'total' =>$compra->total
+      ]);
+
     }
 
     /**

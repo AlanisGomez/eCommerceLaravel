@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Categoria;
+use App\Marca;
 use App\Producto;
 use App\Cart;
 use Session;
@@ -62,16 +64,16 @@ class ProductosController extends Controller
 
     $productoNuevo = new Producto();
 
-    $ruta = $request->imagen->store("public");
-    $nombreArchivo = basename($ruta);
+    $ruta = $request->file('imagen')->store("public");
+    $nombreArchivo = '/storage/' . basename($ruta);
 
     $productoNuevo->imagen = $nombreArchivo;
     $productoNuevo->nombre = $request["nombre"];
     $productoNuevo->descripcion = $request["descripcion"];
     $productoNuevo->precio = $request["precio"];
     $productoNuevo->stock = $request["stock"];
-    $productoNuevo->marca_id = $request["marca_id"];
-    $productoNuevo->categoria_id = $request["categoria_id"];
+    $productoNuevo->marca_id = Marca::all()->random()->id;
+    $productoNuevo->categoria_id = Categoria::all()->random()->id;
 
     $productoNuevo->save();
     return redirect("admin/productos");
@@ -141,7 +143,7 @@ class ProductosController extends Controller
     $productoUpdate->descripcion = $request["descripcion"];
     $productoUpdate->precio = $request["precio"];
     $productoUpdate->stock = $request["stock"];
-    //$productoUpdate->marca_id = $request["marca_id"];    
+    //$productoUpdate->marca_id = $request["marca_id"];
     //$productoUpdate->categoria_id = $request["categoria_id"];
 
     $productoUpdate->save();

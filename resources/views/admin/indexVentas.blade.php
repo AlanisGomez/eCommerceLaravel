@@ -7,7 +7,7 @@ Mis compras
 @section('content')
 <div class="px-4 px-lg-0">
     <div class="container pt-5 text-center">
-        <h1 class="display-4">Usuarios</h1>
+        <h1 class="display-4">Ventas</h1>
     </div>
     <div class="pb-5 pt-5 mt-5 bodybkg">
         <div class="container">
@@ -15,19 +15,19 @@ Mis compras
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Mail</th>
-                            <th>Role</th>
+                            <th>Num. de Factura</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Ver Detalle</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($usuarios as $usuario)
+                        @foreach ($compras as $compra)
                         <tr>
-                            <td>{{$usuario->nombre}}</td>
-                            <td>{{$usuario->apellido}}</td>
-                            <td>{{$usuario->email}}</td>
-                            <td>{{$usuario->role}}</td>
+                            <td>{{$compra->num_factura}}</td>
+                            <td>{{$compra->fec_compra}}</td>
+                            <td>{{$compra->total}}</td>
+                            <td><a href="{{ route('showCompra', ['id' => $compra->id]) }}" class="text-dark"><i class="fa fa-search"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -7,7 +7,7 @@ Mis compras
 @section('content')
 <div class="px-4 px-lg-0">
     <div class="container pt-5 text-center">
-        <h1 class="display-4">Usuarios</h1>
+        <h1 class="display-4">Categorías</h1>
     </div>
     <div class="pb-5 pt-5 mt-5 bodybkg">
         <div class="container">
@@ -15,19 +15,17 @@ Mis compras
                 <table id="example" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Mail</th>
-                            <th>Role</th>
+                            <th>Descripción</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($usuarios as $usuario)
+                        @foreach ($categorias as $categoria)
                         <tr>
-                            <td>{{$usuario->nombre}}</td>
-                            <td>{{$usuario->apellido}}</td>
-                            <td>{{$usuario->email}}</td>
-                            <td>{{$usuario->role}}</td>
+                          <td><img src="../../{{ $categoria->imagen }}"alt="" width="150" class="img-fluid rounded shadow-sm" style="text-align: center"></td>
+                            <td>{{$categoria->nombre}}</td>
+                            <td>{{$categoria->descripcion}}</td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -33,9 +33,17 @@ Route::get('/correrMigracion',function(){
 
     Route::post('update/{id}', 'ProductosController@update');
 
-    Route::get('/usuarios', 'UsuarioController@index');
+    Route::get('/usuarios', 'UsuarioController@index')->name('usuarios');
 
     Route::post('/borrar', 'ProductosController@destroy')->name('borrar');
+
+    Route::get('/marcas', 'MarcasController@index')->name('marcas');
+
+    Route::get('/categorias', 'CategoriasController@index')->name('categorias');
+
+    Route::get('/compras', 'ComprasControllerAdmin@index')->name('ventas');
+
+    Route::get('/compras/{id}', 'ComprasControllerAdmin@show')->name('ventasDetalle');
 
 });
 
@@ -59,7 +67,7 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 
   Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
-  Route::get('/compras', 'ComprasController@index')->name('compras');
+  Route::get('/compras', 'ComprasController@indexByUser')->name('compras');
 
   Route::get('/compras/{id}', 'ComprasController@show')->name('showCompra');
 

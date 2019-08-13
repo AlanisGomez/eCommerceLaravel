@@ -35,7 +35,7 @@ Detalle
               <span class="info-box-icon bg-red"><i class="fas fa-tags"></i></span>
 
               <div class="info-box-content dark-card">
-                <span class="info-box-text" style="font-weight:bold;"><a href="#">Marcas</a></span>
+                <span class="info-box-text" style="font-weight:bold;"><a href="{{ route('marcas') }}">Marcas</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -51,7 +51,7 @@ Detalle
               <span class="info-box-icon bg-green"><i class="fas fa-shopping-cart"></i></span>
 
               <div class="info-box-content dark-card">
-                <span class="info-box-text" style="font-weight:bold;"><a href="#">Ventas</a></span>
+                <span class="info-box-text" style="font-weight:bold;"><a href="{{ route('ventas') }}">Ventas</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -63,7 +63,7 @@ Detalle
               <span class="info-box-icon bg-yellow"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content dark-card">
-                <span class="info-box-text" style="font-weight:bold;"><a href="#">Usuarios</a></span>
+                <span class="info-box-text" style="font-weight:bold;"><a href="{{ route('usuarios') }}">Usuarios</a></span>
               </div>
               <!-- /.info-box-content -->
             </div>

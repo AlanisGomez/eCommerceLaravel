@@ -18,8 +18,17 @@ class ComprasController extends Controller
      */
     public function index()
     {
-      $id = Auth::user()->id;
       $compras=Compra::all();    //::where('usuario_id', '=',$id)->get();
+
+      return view('customer\indexCompras', [
+        'compras' => $compras,
+      ]);
+    }
+
+    public function indexByUser()
+    {
+      $id = Auth::user()->id;
+      $compras=Compra::where('usuario_id', '=',$id)->get();
 
       return view('customer\indexCompras', [
         'compras' => $compras,
