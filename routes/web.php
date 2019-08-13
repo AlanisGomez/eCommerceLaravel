@@ -4,6 +4,8 @@
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/install',function(){
   Artisan::call('storage:link');
 });
