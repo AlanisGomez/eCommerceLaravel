@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Session;
+use Auth;
+
+
 
 class LoginController extends Controller
 {
@@ -27,7 +31,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+
+      protected function authenticated(Request $request, $user)
+       {
+       if ( $user->role === 'admin') {// do your margic here
+           return redirect()->route('dashboard');
+       }
+
+        return redirect('/home');
+       }
 
 
     /**

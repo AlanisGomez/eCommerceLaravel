@@ -20,7 +20,7 @@ class ProductosControllerUser extends Controller
   {
       $productos=Producto::paginate(12);
 
-      return view('/indexProductos', [
+      return view('customer/indexProductos', [
         'productos' => $productos,
       ]);
   }
@@ -29,7 +29,7 @@ class ProductosControllerUser extends Controller
   {
       $productos=Producto::where('categoria_id','=',$id)->get();
 
-      return view('/indexProductos', [
+      return view('customer/indexProductos', [
         'productos' => $productos,
       ]);
   }
@@ -37,7 +37,7 @@ class ProductosControllerUser extends Controller
   public function search(Request $request) {
       $productos= Producto::where('nombre', 'like', '%' . $request->get('q') .'%')->paginate(12);
 
-    return view("/indexProductos", [
+    return view("customer/indexProductos", [
           'productos' => $productos
         ]);
     }
