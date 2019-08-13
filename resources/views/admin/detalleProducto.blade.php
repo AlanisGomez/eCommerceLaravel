@@ -21,7 +21,11 @@
           <div class="row">
             <div class="col-12 col-md-7">
               <div class="imagen-container">
-                 <img class="detalle" src="../../{{$producto->imagen}}" alt="">
+                @if (strpos($producto->imagen,'/storage/')!== false)
+                  <img class="detalle" src="{{$producto->imagen}}" alt="">
+                @else
+                  <img class="detalle" src="../../{{$producto->imagen}}" alt="">
+                @endif
                </div>
               </div>
             <div class="col-12 col-md-5 relacion">

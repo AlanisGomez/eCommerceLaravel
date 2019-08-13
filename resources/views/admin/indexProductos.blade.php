@@ -59,7 +59,11 @@
                         {{$categoria = App\Categoria::find($producto->categoria_id)}}
                       </div>
                     <tr class="{{$categoria->nombre}}">
+                      @if (strpos($producto->imagen,'/storage/')!== false)
+                        <td><img src="{{ $producto->imagen }}"alt="" width="150" class="img-fluid rounded shadow-sm" style="text-align: center"></td>
+                      @else
                         <td><img src="../../{{ $producto->imagen }}"alt="" width="150" class="img-fluid rounded shadow-sm" style="text-align: center"></td>
+                      @endif
                         <td>{{$producto->nombre}}</td>
                         <td>{{$producto->descripción}}</td>
                         <td>{{$producto->precio}}</td>
