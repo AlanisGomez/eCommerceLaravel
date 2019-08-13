@@ -8,7 +8,9 @@
 <div class="">
 <div class="container">
 <section class="producto-detalle">
-<a href="/admin/create" class="btnSubmit" role="button" aria-pressed="true">Agregar producto</a>
+  <div class="" style="width:200px">
+    <a href="/admin/create" class="btn btn-dark rounded-pill py-2 btn-block" role="button" aria-pressed="true">Agregar producto</a>
+  </div>
   <div class="filters">
     <div class="ui-group">
       <div class="button-group js-radio-button-group" data-filter-group="categoria">

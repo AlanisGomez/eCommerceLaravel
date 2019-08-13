@@ -62,7 +62,7 @@ class ProductosController extends Controller
 
     $productoNuevo = new Producto();
 
-    $ruta = $request->file("imagen")->store("public");
+    $ruta = $request->imagen->store("public");
     $nombreArchivo = basename($ruta);
 
     $productoNuevo->imagen = $nombreArchivo;
@@ -131,8 +131,8 @@ class ProductosController extends Controller
 
     $productoUpdate =Producto::find($id);
 
-    $ruta = $request->file("imagen")->store("public");
-    if(!empty($ruta)){
+    if($request->filled('imagen')){
+      $ruta = $request->imagen->store("public");
       $nombreArchivo = basename($ruta);
       $productoUpdate->imagen = $nombreArchivo;
     }
@@ -141,9 +141,8 @@ class ProductosController extends Controller
     $productoUpdate->descripcion = $request["descripcion"];
     $productoUpdate->precio = $request["precio"];
     $productoUpdate->stock = $request["stock"];
-    $productoUpdate->marca_id = $request["marca_id"];
-    $productoUpdate->marca_id = $request["marca_id"];
-    $productoUpdate->categoria_id = $request["categoria_id"];
+    //$productoUpdate->marca_id = $request["marca_id"];    
+    //$productoUpdate->categoria_id = $request["categoria_id"];
 
     $productoUpdate->save();
     return redirect("admin/productos");

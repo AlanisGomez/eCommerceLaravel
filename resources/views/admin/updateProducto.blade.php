@@ -52,7 +52,9 @@
             </div>
             <div  class="col-12 col-md-4 upload-file">
             </div>
-            <button type="submit" class="btnSubmit">{{__('Guardar')}}</button>
+            <div class="mt-3" style="width:50%;margin-left:auto;margin-right:auto;">
+              <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block">{{__('Guardar')}}</button>
+            </div>
           </form>
           </div>
           </div>

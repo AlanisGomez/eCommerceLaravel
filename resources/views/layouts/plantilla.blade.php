@@ -61,9 +61,15 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colecciones</a>
                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                          @if (Auth::user()->esCustomer() OR !Auth::check())
                             <a class="dropdown-item" href="{{ route('product.index') }}">Mujer</a>
                             <a class="dropdown-item" href="{{ route('product.index') }}"> Hombre</a>
                             <a class="dropdown-item" href="{{ route('product.index') }}"> Niños</a>
+                          @else
+                            <a class="dropdown-item" href="{{ route('productos') }}">Mujer</a>
+                            <a class="dropdown-item" href="{{ route('productos') }}"> Hombre</a>
+                            <a class="dropdown-item" href="{{ route('productos') }}"> Niños</a>
+                          @endif
                         </div>
                     </li>
                 </ul>

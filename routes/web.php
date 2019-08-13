@@ -31,7 +31,7 @@ Route::get('/correrMigracion',function(){
 
     Route::get('update/{id}', 'ProductosController@edit');
 
-    Route::get('update/{id}', 'ProductosController@update');
+    Route::post('update/{id}', 'ProductosController@update');
 
     Route::get('/usuarios', 'UsuarioController@index');
 
