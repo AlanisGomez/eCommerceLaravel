@@ -48,7 +48,7 @@
   <div class="row">
     <div class="col-12 col-md-4">
       <article class="producto">
-        <a title="Mujer" href="{{ route('productos') }}">
+        <a title="Mujer" href="{{ redirect('customer/productos') }}">
           <div class="imagen-container relative">
           <div class="collection-title">
             <h2>Mujer</h2>
@@ -63,7 +63,7 @@
           </div>
           <div class="col-12 col-md-4">
             <article class="producto">
-                <a title="Hombre" href="{{ route('productos') }}">
+                <a title="Hombre" href="{{ redirect('customer/productos') }}">
               <div class="imagen-container relative">
                 <div class="collection-title">
                   <h2>Hombre</h2>
@@ -75,7 +75,7 @@
           </div>
           <div class="col-12 col-md-4">
             <article class="producto">
-              <a title="Niños" href="{{ route('productos') }}">
+              <a title="Niños" href="{{ redirect('customer/productos') }}">
               <div class="imagen-container relative">
                 <div class="collection-title">
                   <h2>Niños</h2>

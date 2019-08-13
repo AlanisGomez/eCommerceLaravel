@@ -121,5 +121,12 @@ return value;
 
 @endpush
 @push('styles')
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $('body').css('background-image', 'url(../images/tiles-shapes.jpg');
+      });
+  </script>
+
   <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 @endpush

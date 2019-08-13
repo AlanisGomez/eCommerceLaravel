@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Producto;
-
 use App\Cart;
 use Session;
 use Auth;

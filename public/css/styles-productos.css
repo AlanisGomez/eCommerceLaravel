@@ -9,15 +9,12 @@
 
 div.productos{
 background-repeat: no-repeat;
-background-image: url('../images/tiles-shapes.jpg');
 background-position:center;
 background-attachment: fixed;
 background-size: 100%;
 box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
 width: 100% !important;
-
-
 }
 
 ul.pagination {

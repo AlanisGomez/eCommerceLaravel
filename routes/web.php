@@ -1,19 +1,23 @@
 <?php
 
 
+
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/install',function(){
+  Artisan::call('storage:link');
+});
 
-//Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@indexAdmin')->name('homeAdmin');
+Route::get('/correrMigracion',function(){
+  Artisan::call('migrate');
+});
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
+    Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
+    'middleware' =>['auth', 'admin']], function(){
 
-Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
-'middleware' =>['auth', 'admin']], function(){
 
-    Route::get('/home', 'HomeController@indexAdmin')->name('homeAdmin');
+    Route::get('/dashboard', 'HomeControllerAdmin@index')->name('dashboard');
 
     Route::get('/productos', 'ProductosController@index')->name('productos');
 
@@ -27,16 +31,16 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
 
     Route::get('update/{id}', 'ProductosController@edit');
 
+    Route::get('update/{id}', 'ProductosController@update');
+
     Route::get('/usuarios', 'UsuarioController@index');
+
+    Route::post('/borrar', 'ProductosController@destroy')->name('borrar');
+
 });
 
-Route::get('/install',function(){
-  Artisan::call('storage:link');
-});
 
-Route::get('/correrMigracion',function(){
-  Artisan::call('migrate');
-});
+
 
 Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
 'middleware' =>['auth', 'customer']], function(){
@@ -52,7 +56,8 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
       'as' => 'checkout',
       'middleware' => 'auth'
   ]);
-  Route::get('/compras', 'ComprasController@index');
+  
+  Route::get('/productos', 'ProductosControllerUser@index')->name('productos');
 
   Route::get('/compras', 'ComprasController@index')->name('compras');
 
@@ -99,26 +104,3 @@ Route::group(['prefix'=>'customer', 'namespace' => 'Customer',
         'middleware' => 'auth'
     ]);
   });
-
-
-
-    Route::group(['prefix'=>'admin', 'namespace' => 'Admin',
-    'middleware' =>['auth', 'admin']], function(){
-
-        Route::get('/productos', 'ProductosController@index')->name('productos');
-
-        Route::get('/detalle/{id}',  'ProductosController@show');
-
-        Route::get('/productos/buscar' , 'ProductosController@search')->name('buscar');
-
-        Route::get('/create', 'ProductosController@create');
-
-        Route::post('/create','ProductosController@store')->name('create');
-
-        Route::get('update/{id}', 'ProductosController@edit');
-
-        Route::get('/usuarios', 'UsuarioController@index');
-
-          Route::post('/borrar', 'ProductosController@destroy')->name('borrar');
-
-    });
