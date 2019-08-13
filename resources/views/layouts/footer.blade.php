@@ -18,7 +18,7 @@
           <textarea name="consulta" rows="4" cols="100%" placeholder="Consulta"></textarea>
           </p>
         <p>
-          <input type="submit" value="Enviar" class="btnSubmit justifyCenter">
+          <input type="submit" value="Enviar" class="btn btn-dark rounded-pill py-2 btn-block">
         </p>
       </form>
           </div>

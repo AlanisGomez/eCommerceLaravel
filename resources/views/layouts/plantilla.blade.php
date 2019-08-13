@@ -47,15 +47,23 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                  <li class="nav-item active">
+                    @if (Auth::check())
+                      @if (Auth::user()->esCustomer())
                         <a class="nav-link" href="{{ route('home') }}" id="navHome">Inicio<span class="sr-only">(current)</span></a>
+                      @else
+                        <a class="nav-link" href="{{ route('dashboard') }}" id="navHome">Inicio<span class="sr-only">(current)</span></a>
+                      @endif
+                    @else
+                      <a class="nav-link" href="{{ route('home') }}" id="navHome">Inicio<span class="sr-only">(current)</span></a>
+                    @endif
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colecciones</a>
                         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('productos') }}">Mujer</a>
-                            <a class="dropdown-item" href="{{ route('productos') }}"> Hombre</a>
-                            <a class="dropdown-item" href="{{ route('productos') }}"> Niños</a>
+                            <a class="dropdown-item" href="{{ route('product.index') }}">Mujer</a>
+                            <a class="dropdown-item" href="{{ route('product.index') }}"> Hombre</a>
+                            <a class="dropdown-item" href="{{ route('product.index') }}"> Niños</a>
                         </div>
                     </li>
                 </ul>
@@ -73,19 +81,24 @@
                     </li>
                     @endif
                     @else
-                    <li class="nav-item">
-                        <a id="navCarrito" href="{{ route('product.shoppingCart') }}" class="nav-link">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi Carrito
-                            <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
-                        </a>
-                    </li>
+                      @if (Auth::user()->esCustomer())
+                        <li class="nav-item">
+                            <a id="navCarrito" href="{{ route('product.shoppingCart') }}" class="nav-link">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Mi Carrito
+                                <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                            </a>
+                        </li>
+                      @endif
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdownUser" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->nombre}} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('compras') }}">Mis Compras</a>
+                            @if (Auth::user()->esCustomer())
+                                <a class="dropdown-item" href="{{ route('compras') }}">Mis Compras</a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -100,7 +113,7 @@
             </div>
         </nav>
     </header>
-    <main class="mainContent">
+    <main class="mainContent" style="min-height:100vh">
         @yield('content')
     </main>
 

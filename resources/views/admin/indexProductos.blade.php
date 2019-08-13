@@ -36,7 +36,7 @@
 <div class="grid">
 
 </div>
-<div class="pb-3 pt-3">
+<div class="pt-3">
     <div class="container">
         <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
